@@ -26,7 +26,7 @@
                 </span>
             </ion-col>
             <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
-                <ion-select formControlName="userType" placeholder="{{setLanguage.User_Type}}" required>
+                <ion-select formControlName="userType" class="margin0" placeholder="{{setLanguage.User_Type}}" required>
                     <ion-option *ngFor="let StackHoldersList of masterData.StackHolders" value={{StackHoldersList.StackHolderId}}>
                         {{StackHoldersList.StackHolderName}}</ion-option>
                 </ion-select><span class="danger">*</span>
@@ -34,21 +34,22 @@
                   <span class="text-danger" *ngIf="userProfile.get('userType').hasError('required')" title="User Type is required"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>User Type is required</span>
                 </span>
             </ion-col>
-            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6>
-                <ion-select formControlName="gender" class="gender" placeholder="{{setLanguage.Gender}}" required>
+            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
+                <ion-select formControlName="gender" class="margin0" placeholder="{{setLanguage.Gender}}" required>
                     <ion-option *ngFor="let genderList of masterData.Gender" value={{genderList.GenderId}}>
                         {{genderList.GenderName}}</ion-option>
-                </ion-select><span class="danger">*</span>
+                </ion-select>
+                <span class="danger">*</span>
                 <span class="help-block" *ngIf="userProfile.get('gender').touched">
                   <span class="text-danger" *ngIf="userProfile.get('gender').hasError('required')" title="Gender is required"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Gender is required</span>
                 </span>
             </ion-col>
-            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6>
-                <ion-datetime displayFormat="DD/MM/YYYY" placeholder="{{setLanguage.Date_of_Birth}}" min="1940-01-01" max="{{currentDate}}"   formControlName="dateOfBirth" class="dob_Calender"></ion-datetime>
+            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
+                <ion-datetime class="margin0" displayFormat="DD/MM/YYYY" placeholder="{{setLanguage.Date_of_Birth}}" min="1940-01-01" max="{{currentDate}}"   formControlName="dateOfBirth" class="dob_Calender"></ion-datetime>
                 <ion-icon name="calendar" color="dark" item-right class="dob_Calender_icon"></ion-icon>
             </ion-col>
             <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
-                <ion-select formControlName="oragType" placeholder="{{setLanguage.Orgnization_Type}}" required>
+                <ion-select formControlName="oragType" class="margin0" placeholder="{{setLanguage.Orgnization_Type}}" required>
                     <ion-option *ngFor="let OrganizationList of masterData.Organization" value={{OrganizationList.OrganizationId}}>
                         {{OrganizationList.OrganizationName}}</ion-option>
                 </ion-select><span class="danger">*</span>
@@ -57,7 +58,7 @@
                 </span>
             </ion-col>
             <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
-                <ion-select formControlName="preferdLanguage" placeholder="{{setLanguage.Preferd_Language}}" required>
+                <ion-select formControlName="preferdLanguage" placeholder="{{setLanguage.Preferd_Language}}" class="margin0" required>
                     <ion-option *ngFor="let preferdLanguageList of masterData.Languages" value={{preferdLanguageList.LanguageId}}>
                         {{preferdLanguageList.LanguageName}}</ion-option>
                 </ion-select><span class="danger">*</span>
@@ -66,7 +67,7 @@
                 </span>
             </ion-col>
             <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
-                <ion-select formControlName="country" placeholder="{{setLanguage.Country}}" required (ionChange)="chkCountry($event)">
+                <ion-select formControlName="country" class="margin0" placeholder="{{setLanguage.Country}}" required (ionChange)="chkCountry($event)">
                     <ion-option *ngFor="let countryList of masterData.Country" value={{countryList.CountryId}}>
                         {{countryList.CountryName}}</ion-option>
                 </ion-select><span class="danger">*</span>
@@ -75,7 +76,7 @@
                 </span>
             </ion-col>
             <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 class="countrychk">
-                <ion-select formControlName="state" placeholder="{{setLanguage.State}}" (ionChange)="getDistict($event)" required>
+                <ion-select formControlName="state" class="margin0" placeholder="{{setLanguage.State}}" (ionChange)="getDistict($event)" required>
                     <ion-option *ngFor="let getStateList of masterData.States" value={{getStateList.StateId}}>
                         {{getStateList.StateName}}</ion-option>
                 </ion-select><span class="danger">*</span>
@@ -84,7 +85,7 @@
                 </span>
             </ion-col>
             <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 class="countrychk">
-                <ion-select formControlName="district" placeholder="{{setLanguage.District}}" required>
+                <ion-select formControlName="district" class="margin0" placeholder="{{setLanguage.District}}" required>
                     <ion-option *ngFor="let GetDistricts of GetDistrictsByStateId" value={{GetDistricts.DistrictId}}>
                         {{GetDistricts.DistrictName}}</ion-option>
                 </ion-select>
@@ -94,13 +95,14 @@
                 </span>
             </ion-col>
             <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
-                <ion-input type="tel" class="phone" pattern="[0-9]{1}[0-9]{9}" placeholder="{{setLanguage.Mobile_No}}" formControlName="mobile"></ion-input>
+                <ion-input type="text" class="phone" pattern="[0-9]{1}[0-9]{9}" placeholder="{{setLanguage.Mobile_No}}" formControlName="mobile"></ion-input>
                 <span class="help-block" *ngIf="userProfile.get('mobile').touched">
                   <span class="text-danger" *ngIf="userProfile.get('mobile').hasError('pattern')" title="Only Numbers are allowed"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Only Numbers are allowed</span>
                 </span>
             </ion-col>
+
             <ion-col col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1></ion-col>
-            <ion-col col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5>
+            <ion-col col-xl-6 col-lg-6 col-md-5 col-sm-5 col-5>
                 <button ion-button float-right block color="dark" type="submit">{{setLanguage.Save}}</button>
             </ion-col>
             <ion-col col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5>

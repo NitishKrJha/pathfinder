@@ -9,6 +9,12 @@ page-user-profile {
         bottom: 38%;
         background: $theme_primary_font_color;
     }
+    .margin0 {
+      margin: 0 !important;
+    }
+    .phone{
+      margin-right: 5%;
+    }
     .button-md {
         border-radius: 12px;
     }
@@ -87,7 +93,8 @@ page-user-profile {
             max-width: 91%;
         }
         .dob_Calender {
-            width: 86%;
+            width: 91%;
+            margin-left: 3%;
         }
         .phone {
             width: 95%;
@@ -95,11 +102,11 @@ page-user-profile {
     }
     @media screen and (min-width: 500px) {
         ion-select {
-            max-width: 92%;
+            max-width: 91%;
         }
         .dob_Calender {
-            width: 92%;
-            margin-left: -5%;
+            max-width: 91%;
+            margin-left: 3%;
         }
         .phone {
             width: 94%;
@@ -117,7 +124,7 @@ page-user-profile {
             margin-left: -5%;
         }
         ion-select.gender {
-            max-width: 80%;
+            max-width: 91%;
             margin-top: 12px;
         }
         .phone {
