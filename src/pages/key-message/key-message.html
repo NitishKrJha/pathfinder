@@ -1,0 +1,51 @@
+ 
+<ion-header>
+  <ion-navbar>
+      <ion-row>
+          <ion-col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 class="padding-horizontal">
+              <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+              <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+          </ion-col>
+          <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 class="vertical_align_middle">
+              <ion-title text-center>{{setLanguage.keyMessage}}</ion-title>
+          </ion-col>
+          <ion-col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 class="padding-horizontal">
+              <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right>
+              <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+          </ion-col>
+      </ion-row>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content  >
+ <ion-grid>
+        <ion-list>
+            <ion-item *ngFor="let getkeyMessageData of keyMessageData"   (click)="gotoKeyMessageContent(getkeyMessageData)"text-wrap>
+                <ion-avatar item-start class="circle">
+                    <img src="{{getkeyMessageData.KeyMessageImage}}">
+                </ion-avatar>
+                {{getkeyMessageData.KeyMessageHeading}}
+                <!-- <img src="{{getkeyMessageData.KeyMessageImage}}" alt="{{getkeyMessageData.KeyMessageImage}}"> -->
+                <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+            </ion-item>
+            <ion-item *ngIf="keyMessageData==''">
+                {{setLanguage.noDataFound}}  
+           </ion-item>
+        </ion-list>
+    </ion-grid>
+    
+</ion-content>
+<ion-footer>
+  <ion-grid class="footer_Grid">
+      <ion-row>
+          <ion-col col-6>
+              <img src="assets/imgs/back.png" height="35px"  (click)="gotoDashboard();" >
+              <!-- <ion-icon  class="footer-Icon" name="md-arrow-back" (click)="gotoDashboard();"></ion-icon> -->
+          </ion-col>
+          <ion-col col-6>
+              <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-footer>

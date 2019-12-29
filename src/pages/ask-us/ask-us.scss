@@ -1,0 +1,38 @@
+page-ask-us {
+    ion-textarea {
+        border: 1px solid $theme_primary_color;
+        color: $gray_color;
+    }
+    ion-card {
+        min-height: 55px;
+    }
+    ion-card-content {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    ion-item-divider {
+        height: 1px !important;
+        min-height: 5px !important;
+        font-size: 0px;
+    }
+    .font-medium {
+        font-size: 9px;
+    }
+    span.help-block {
+        color: red;
+        display: block;
+        margin-left: 4%;
+    }
+    .modal {
+        // display: block;
+        padding-top: 25%;
+        height: 92%;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+    .font-small {
+        font-size: 8px;
+    }
+}

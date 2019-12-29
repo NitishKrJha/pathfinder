@@ -1,0 +1,109 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 no-padding>
+                <img class="header-logo-img" src="assets/imgs/header-fp-logo.png">
+            </ion-col>
+            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 no-padding>
+                <img class="header-logo-img" float-right src="assets/imgs/full-logo.png">
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+    <div class="progress"></div>
+
+    <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+    <div float-right>
+      <h5 class="font-dark" float-right>
+        <ion-select placeholder="Language" class="langSelect" [(ngModel)]="lang" (ionChange)="changeLanguage($event)">
+          <ion-option *ngFor="let lang of langOption" [value]="lang">{{ lang }}</ion-option>
+        </ion-select>
+      </h5>
+    </div>
+    <div class="dashboard-back-img">
+        <div class="dashboard-icon" text-center style="top: 12%;left: 5px;">
+            <button ion-button icon-only class="circle" color="appcolor" (click)=" startDateTime('FPOverview');">
+                <img src="assets/imgs/dashboard-icons/fp-overview-icon.png" >
+            </button> <br/><span class="font-dark">{{setLanguage.overview}}</span>
+        </div>
+
+        <div class="dashboard-icon" text-center style="top: 34%;left: 5px;">
+            <button ion-button icon-only class="circle" color="appcolor" (click)=" startDateTime('Faq');">
+                <img src="assets/imgs/dashboard-icons/faq-icon.png" >
+            </button> <br/><span class="font-dark">{{setLanguage.Faq}}</span>
+        </div>
+        <div class="dashboard-icon" text-center style="top: 56%; left: 5px;">
+            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('KeyMessage');">
+                 <img src="assets/imgs/dashboard-icons/keymessage-icon.png" >
+            </button> <br/><span class="font-dark">{{setLanguage.keyMessage}}</span>
+        </div>
+        <div class="dashboard-icon" text-center style="top: 78%; left: 5px;">
+            <button ion-button icon-only class="circle" color="appcolor" (click)=" startDateTime('Counselling');">
+                <img src="assets/imgs/dashboard-icons/couselling-icon.png" >
+            </button> <br/><span class="font-dark">{{setLanguage.counselling}}</span>
+        </div>
+        <!-- <div class="dashboard-icon" text-center style="top: 78%; left: 35%;">
+            <button ion-button icon-only class="circle" color="appcolor" (click)="gotoQuizPage();">
+                <img src="assets/imgs/dashboard-icons/quiz-icon.png"  >
+            </button> <br/><span class="font-dark">{{setLanguage.Quiz}}</span>
+        </div> -->
+        <div class="dashboard-icon" text-center style="top: 12%;right: 5px;">
+            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('ContraceptiveMethods');">
+                <img src="assets/imgs/dashboard-icons/contra-icons.png">
+            </button> <br/><span class="font-dark">{{setLanguage.Methods}}</span>
+        </div>
+        <div class="dashboard-icon" text-center style="top: 34%;right: 5px;">
+            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('AskUs');">
+                <img src="assets/imgs/dashboard-icons/ask-icon.png">
+            </button> <br/><span class="font-dark">{{setLanguage.AskUs}}</span>
+        </div>
+
+        <div class="dashboard-icon" text-center style="top: 56%; right: 5px;">
+            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('Quiz');">
+                    <img src="assets/imgs/dashboard-icons/quiz-icon.png"  >
+                </button> <br/><span class="font-dark">{{setLanguage.Quiz}}</span>
+            <!-- <img src="assets/imgs/dashboard-icons/incentives-icon.png"  (click)="gotoIncentivesPage();">
+            </button> <br/><span class="font-dark">{{setLanguage.incentive}}</span> -->
+        </div>
+        <div class="dashboard-icon" text-center style="top: 78%;right: 5px;">
+            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('Library');">
+                <img src="assets/imgs/dashboard-icons/library-icon.png"  >
+            </button> <br/><span class="font-dark">{{setLanguage.library}}</span>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal ">
+        <div class="modal-content">
+            <ion-row text-center color="gray_color">
+                <ion-col col-12>
+                    {{customPopUpMsg}}
+                </ion-col>
+                <ion-col col-12> <button ion-button color="dark" (click)="closeModel();">OK</button> </ion-col>
+            </ion-row>
+        </div>
+    </div>
+
+</ion-content>
+<ion-footer>
+    <ion-grid class="dash_footer_Grid">
+        <ion-row>
+            <ion-col col-4>
+                <div> <img class="footer-img" src="assets/imgs/logo_one.jpg"></div>
+            </ion-col>
+
+            <ion-col col-4>
+                <div item-center text-center> <img class="footer-img" src="assets/imgs/logo_two.jpg"></div>
+            </ion-col>
+
+            <ion-col col-4>
+                <!-- <ion-icon class="refershIcon" name="refresh" style="zoom:2.3;" color="light" (click)="confirmUpdate();" float-left></ion-icon> -->
+                <div> <img src="assets/imgs/logo_three.jpg"></div>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-footer>

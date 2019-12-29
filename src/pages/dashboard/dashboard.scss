@@ -1,0 +1,58 @@
+page-dashboard {
+    .display_none {
+        display: none;
+    }
+    ion-navbar.toolbar {
+        padding: 1px 1px;
+    }
+    .circle img {
+        height: 30px;
+        width: 30px;
+        position: relative;
+        -webkit-filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1);
+    }
+    img.header-logo-img {
+        height: 58px;
+    }
+    .dashboard-back-img>.row {
+        height: 20%;
+        align-items: center !important;
+        display: flex !important;
+    }
+    .circle {
+        width: 55px;
+        height: 55px;
+        border-radius: 64px;
+    }
+    .dashboard-back-img {
+        height: 100%;
+        // background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url("../../assets/imgs/dashboard-back-img.jpg");
+        background-image: url("../assets/imgs/dashboard-back-img.png");
+        background-repeat: no-repeat;
+        background-position: 50% 38%;
+        background-size: 53% 63%;
+    }
+    .padding-top-2-per {
+        padding-top: 2%;
+        padding-left: 5%;
+    }
+    .icon_middle_one {
+        margin-top: -15%;
+        margin-left: 15%;
+    }
+    .dashboard-icon {
+        position: absolute;
+        width: 110px;
+        font-size: 12px;
+        //text-align: center;
+    }
+    // @media screen and (min-height: 700px) {
+    //     .dashboard-back-img {
+    //         background-position: 10% 40%;
+    //     }
+    // }
+    .footer-icon {
+        height: 40px;
+    }
+}

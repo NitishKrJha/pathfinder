@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 class="padding-horizontal">
+                <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+                <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 class="vertical_align_middle">
+                <ion-title text-center>{{setLanguage.incentive}}</ion-title>
+            </ion-col>
+            <ion-col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 class="padding-horizontal">
+                <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right>
+                <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div padding>
+             <ion-segment [(ngModel)]="methods">
+                 <ion-segment-button value="incentive" >
+                    {{setLanguage.incentiveLabel}}
+                 </ion-segment-button>
+                 <ion-segment-button value="indemnity">
+                    {{setLanguage.indeminityLabel}}
+                 </ion-segment-button>
+            </ion-segment>
+    </div>
+    <div [ngSwitch]="methods">
+            <div padding *ngSwitchCase="'incentive'">
+                    <img *ngIf="chooseLanguage==eNumValue.Entitylanguage.language_hindi" src="assets/imgs/Incentives_04.jpg" #myImage (click)="presentImage(myImage)" text-center/>
+                    <img *ngIf="chooseLanguage==eNumValue.Entitylanguage.language_english" src="assets/imgs/Incentives hindi final_02.jpg" #myImage (click)="presentImage(myImage)" text-center/>
+            </div>
+    
+            <div padding *ngSwitchCase="'indemnity'">
+                    <img *ngIf="chooseLanguage==eNumValue.Entitylanguage.language_hindi" src="assets/imgs/Indemnity Scheme_04In.jpg" #myImage (click)="presentImage(myImage)" text-center/>
+                    <img *ngIf="chooseLanguage==eNumValue.Entitylanguage.language_english" src="assets/imgs/Indemnity Scheme_Hindi_02.jpg" #myImage (click)="presentImage(myImage)" text-center/>
+            </div>
+    </div>
+    <!-- <img *ngIf="chooseLanguage==eNumValue.Entitylanguage.language_hindi" src="assets/imgs/Incentives.jpg" #myImage (click)="presentImage(myImage)" text-center/>
+    <img *ngIf="chooseLanguage==eNumValue.Entitylanguage.language_english" src="assets/imgs/Incentives_hindi.jpg" #myImage (click)="presentImage(myImage)" text-center/> -->
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer_Grid">
+        <ion-row>
+            <ion-col col-6>
+                <img src="assets/imgs/back.png" height="35px" (click)="gotoDashboard();">
+            </ion-col>
+            <ion-col col-6>
+                <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

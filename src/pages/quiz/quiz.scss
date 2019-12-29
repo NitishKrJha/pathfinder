@@ -1,0 +1,53 @@
+page-quiz {
+    .item-md .radio {
+        margin: 9px 10px 9px 0 !important;
+    }
+    ion-list .item,
+    .radio,
+    .gray_color {
+        color: $gray_color !important;
+    }
+    .radio-icon {
+        border-color: $gray_color !important;
+    }
+    // .radio-checked {
+    //     border-color: $theme_primary_color !important;
+    // }
+    // .radio-inner {
+    //     background-color: $theme_primary_color !important;
+    // }
+    // .item-radio-checked ion-label {
+    //     color: $theme_primary_color !important;
+    // }
+    .swiper-slide {
+        overflow-y: scroll !important;
+        align-items: unset;
+    }
+    .hideresult {
+        display: none;
+    }
+    .rightAns {
+        font-size: 12px !important;
+        color: $colors_secondry;
+    }
+    .wrongAns {
+        font-size: 12px !important;
+        color: $danger_color;
+    }
+    .rightAns ion-label {
+        margin: 0 10px !important;
+    }
+    .wrongAns ion-label {
+        margin: 0 10px !important;
+    }
+    .correctAns {
+        color: $colors_secondry;
+    }
+    .customBtn {
+        width: 70px;
+    }
+    .disabled {
+        pointer-events:none; //This makes it not clickable
+        opacity:0.6;         //This grays it out to look disabled
+    }
+}

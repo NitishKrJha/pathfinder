@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+      <ion-row>
+          <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+              <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+              <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+          </ion-col>
+          <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+              <ion-title text-center>{{setLanguage.Quiz}}</ion-title>
+          </ion-col>
+          <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+              <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right>
+              <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+          </ion-col>
+      </ion-row>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+<div class="quiz-back-img">
+    <div  class="final-position"> 
+                <img class="flag-position" *ngIf="disableData != true"  src="assets/imgs/Flag_signal-grey.png" >
+                <img class="flag-position" *ngIf="disableData == true"  src="assets/imgs/Flag_signal-green.png" >
+                <img class="mascat-position" *ngIf="disableData == true" src="{{mascotImg}}">
+
+                <!-- <img *ngIf="levelId[0].Count > 7 && levelId[1].Count > 7" src="assets/imgs/Flag_signal-green.png" > -->
+    </div>
+
+        <div *ngFor="let level of levelId let i = index" [attr.data-index]="i" id="Id{{level.LevelId}}" class="quiz_{{level.LevelId}} disabled" (click)="gotoQuizContentPage(level.LevelId)" text-wrap>
+                <!-- {{setLanguage.Quiz}} {{level.LevelId}} -- {{levelId[i].Count}} -- {{i}}   -->
+                
+                <div *ngIf="level.LevelId == 1">
+                    <ion-col *ngIf="levelId[1].Count == null" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+                       <img src="assets/imgs/location-orange.png" >
+                       <button ion-button color="primary" float-right>{{setLanguage.Quiz}} {{level.LevelId}}</button>
+                    </ion-col>  
+                    <ion-col *ngIf="levelId[1].Count != null && levelId[1].Count < 10" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+                        <img src="assets/imgs/location-red.png" >
+                        <button ion-button color="primary" float-right> SCORE : {{levelId[1].Count}}/10 <br> TRY AGAIN</button>
+                     </ion-col>   
+                     <ion-col *ngIf="levelId[1].Count != null && levelId[1].Count == 10" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+                        <img src="assets/imgs/location-green.png" >
+                        <button ion-button color="primary" float-right> SCORE : {{levelId[1].Count}}/10 </button>
+                     </ion-col>   
+                </div>
+                <div *ngIf="level.LevelId == 2">
+                     <ion-col *ngIf="levelId[1].Count < 10 " col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+                        <img src="assets/imgs/location-grey.png" >
+                        <button ion-button color="light" float-right>{{setLanguage.Quiz}} {{level.LevelId}}</button>
+                     </ion-col>  
+                     <ion-col *ngIf="levelId[1].Count == 10 && levelId[0].Count == null" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+                        <img src="assets/imgs/location-orange.png" >
+                        <button ion-button color="primary" float-right>{{setLanguage.Quiz}} {{level.LevelId}}</button>
+                     </ion-col> 
+                     <ion-col *ngIf="levelId[0].Count != null && levelId[0].Count < 10 && levelId[1].Count != 0" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+                        <img src="assets/imgs/location-red.png" >
+                        <button ion-button color="primary" float-right>SCORE : {{levelId[0].Count}}/10 <br> TRY AGAIN</button>
+                     </ion-col>  
+                     <ion-col *ngIf="levelId[0].Count != null && levelId[0].Count == 10 && levelId[1].Count == 10" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+                        <img src="assets/imgs/location-green.png" >
+                        <button ion-button color="primary" float-right>SCORE : {{levelId[0].Count}}/10</button>
+                     </ion-col> 
+                 </div>
+         </div>
+               
+  <!-- <ion-list>
+     
+        <ion-item *ngFor="let level of levelId let i = index" [attr.data-index]="i" id="Id{{level.LevelId}}" (click)="gotoQuizContentPage(level.LevelId)"  class= "disabled"  text-wrap>
+            {{setLanguage.levelText}} {{level.LevelId}} -- {{levelId[i].Count}} -- {{i}}
+          
+             <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+         </ion-item>
+       
+</ion-list> -->
+</div>
+
+</ion-content>
+<ion-footer>
+  <ion-grid class="footer_Grid">
+      <ion-row>
+          <ion-col col-6>
+              <img src="assets/imgs/back.png" height="35px" (click)="gotoDashboard();">
+              <!-- <ion-icon  class="footer-Icon" name="md-arrow-back" (click)="gotoDashboard();"></ion-icon> -->
+          </ion-col>
+          <ion-col col-6>
+                <ion-icon class="refershIcon" name="refresh" style="zoom:2.3;" color="light" (click)="playAgain();" float-right></ion-icon>
+                <!-- <ion-icon  class="footer-Icon" name="md-arrow-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-footer>

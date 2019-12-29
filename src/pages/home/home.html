@@ -1,0 +1,22 @@
+<ion-content>
+    <ion-grid>
+        <ion-row class="height-100">
+            <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12>
+                <!-- <h5 class="font-dark" float-right (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</h5> -->
+                <h5 class="font-dark" float-right>
+                  <ion-select placeholder="Language" class="langSelect" [(ngModel)]="lang" (ionChange)="changeLanguage($event)">
+                    <ion-option *ngFor="let lang of langOption" [value]="lang">{{ lang }}</ion-option>
+                  </ion-select>
+                </h5>
+            </ion-col>
+            <ion-col class="padding-top-20" col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
+                <img class="flash-img" src="assets/imgs/flash-screen.png"><br/><br/>
+            </ion-col>
+            <ion-col class="home_bottom" col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
+                <button ion-button round color="dark" (click)="gotoUserProfile()">{{setLanguage.Create_Your_Profile}}</button><br/>
+                <small>{{setLanguage.Tap_to_here_to_create_your_profile}}</small>
+                <img class="logo-img" src="assets/imgs/full-logo.png">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

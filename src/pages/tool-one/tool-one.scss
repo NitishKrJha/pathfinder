@@ -1,0 +1,36 @@
+page-tool-one {
+    .border {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #EAEDED;
+        padding: 15px 12px 8px 12px;
+    }
+    .radio-icon {
+        width: 20px !important;
+        height: 20px !important;
+        border-color: $colors_radio !important;
+        background: #F7FFEC;
+        border-width: 3px !important;
+    }
+    .radio-inner {
+        width: 10px !important;
+        height: 10px !important;
+        background-color: $colors_radio !important;
+    }
+    .ion-label {
+        margin: 13px 2px 12px 0;
+    }
+    .swiper-slide {
+        // overflow-y: scroll !important;
+        align-items: unset;
+    }
+    .label-margin {
+        margin: 10px -1px 13px 0;
+    }
+    .background-no {
+        background-color: $colors_no;
+    }
+    .background-yes {
+        background-color: $colors_yes;
+    }
+}

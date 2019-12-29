@@ -1,0 +1,114 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+                <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+                <ion-title text-center>{{setLanguage.Quiz}}</ion-title>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right>
+                <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-slides (ionSlideDidChange)="slideChanged()">
+        <ion-slide *ngFor="let getQuizQuestion of QuizQuestion let i = index" [attr.data-index]="i" no-padding>
+            <ion-card text-left>
+                <ion-card-header color="primary" text-wrap no-padding>
+                    <ion-grid padding-horizontal padding-bottom>
+                        <ion-row no-padding>
+                            <ion-col col-1 no-padding>
+                                <!-- <span>{{getQuizQuestion.QuestionNo}}</span> -->
+                                <span>{{i+1}}</span>
+                            </ion-col>
+                            <ion-col col-11 no-padding>
+                                {{getQuizQuestion.QuestionText}}
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-header>
+                <ion-card-content padding-horizontal padding-bottom>
+                    <hr>
+                    <ion-list [(ngModel)]="questionModal[i].value" radio-group name="group_{{i}}">
+                        <span *ngFor="let getQuizAnswer of QuizAnswer">
+                        <ion-item   *ngIf="getQuizAnswer.QuestionNo==getQuizQuestion.QuestionNo"  text-wrap >
+                            <ion-radio   (click)="validateAnswer(getQuizAnswer.QuestionNo,getQuizAnswer.CorrectAnswer,i)" item-left></ion-radio>
+                            <ion-label>{{getQuizAnswer.QuestionOptions}}</ion-label>
+                        </ion-item>
+                      </span>
+                    </ion-list>
+                </ion-card-content>
+            </ion-card>
+            <ion-list class='result_{{getQuizQuestion.QuestionNo}}'>
+                <ion-item class=" hideresult rightAns rightAns_{{getQuizQuestion.QuestionNo}}" text-wrap>
+                    
+                    <p>{{setLanguage.correct}}</p>
+                    <!-- <ion-thumbnail item-end> -->
+                    <img width="30" src="assets/imgs/icon_quiz_success.png">
+                    <!-- </ion-thumbnail> -->
+
+                </ion-item>
+
+                <ion-item class=" hideresult wrongAns wrongAns_{{getQuizQuestion.QuestionNo}}" text-wrap>
+                    <ion-thumbnail item-end>
+                        <img width="30" src="assets/imgs/icon_quiz_failure.png">
+                    </ion-thumbnail>
+                    <p float-right class="gray_color">{{setLanguage.incorrect}}<br> {{setLanguage.response}}
+                        <br> <span class="correctAns correctAns_{{getQuizQuestion.QuestionNo}}"></span>
+                    </p>
+                </ion-item>
+            </ion-list>
+        </ion-slide>
+    </ion-slides>
+
+    <div id="myModal" class="modal "> 
+        <div class="modal-content" *ngIf="languageId== 1"> 
+            <ion-row text-center  color="gray_color" >
+                <ion-col col-12>
+                    <img *ngIf="correctCount == 10" src="assets/imgs/animicon_thumbsup-done.gif">
+                    <img *ngIf="correctCount < 10" src="assets/imgs/animicon_thumbsdown.gif">
+                </ion-col>
+                  <ion-col col-12> <button ion-button class="customBtn"  color="primary" (click)="closeModel();">OK</button> </ion-col>
+             </ion-row>
+            
+        </div> 
+
+        <div class="modal-content" *ngIf="languageId== 2"> 
+            <ion-row text-center  color="gray_color" >
+                <ion-col col-12>
+                    <img *ngIf="correctCount == 10" src="assets/imgs/animicon_thumbsup-hindi.gif">
+                    <img *ngIf="correctCount < 10" src="assets/imgs/animicon_thumbsdown-hindi.gif">
+                </ion-col>
+                  <ion-col col-12> <button ion-button class="customBtn" color="primary" (click)="closeModel();">OK</button> </ion-col>
+            </ion-row>
+            
+        </div> 
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-grid class="footer_Grid">
+        <ion-row>
+            <ion-col col-3>
+                <img src="assets/imgs/back.png" height="35px" ion-start (click)="gotoQuizCategoryPage();">
+                <!-- <ion-icon ion-start class="footer-Icon" name="md-arrow-back" (click)="gotoTopicListPage();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-3 text-center>
+                <img src="assets/imgs/prev.png" class="previous" height="35px" ion-start (click)="slidePrev();">
+            </ion-col>
+            <ion-col col-3 text-center>
+                <img src="assets/imgs/next.png" class="forward" height="35px" ion-start (click)="slideNext()">
+            </ion-col>
+            <ion-col col-3>
+                <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+                <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+                <ion-title text-center>{{MethodName}}</ion-title>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                    <ion-icon name="home" style="zoom:2.3;" color="dark" (click)="gotoDashboard();" float-right></ion-icon>
+                <!-- <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right> -->
+                <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-card *ngFor="let getfaqData of faqData let i = index" [attr.data-index]="i" (click)="gotoFAQAnswer(getfaqData,i)">
+        <ion-card-header color="primary" text-wrap>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-11>
+                        <span> {{getfaqData.Question}}</span>
+                    </ion-col>
+                    <ion-col col-1>
+                        <ion-icon name="arrow-dropdown" class="icon icon-md ion-md-arrow-dropdown downSign downSign_{{i}} " float-right></ion-icon>
+                        <ion-icon name="arrow-dropup" class="icon icon-md ion-md-arrow-dropup display-none faqContent ansContent_{{i}}" float-right></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-header>
+        <ion-card-content padding-horizontal padding-bottom class="display-none faqContent ansContent_{{i}}">
+            <hr no-padding>
+            <span class="faqAnswer" style="color:#666666" ></span>
+        </ion-card-content> 
+    </ion-card>
+    <ion-card *ngIf="faqData==''">
+        {{setLanguage.noDataFound}}
+    </ion-card>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer_Grid">
+        <ion-row>
+            <ion-col col-6>
+                <img src="assets/imgs/back.png" height="35px" (click)="gotoFAQMethods();">
+                <!-- <ion-icon  class="footer-Icon" name="md-arrow-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-6>
+                <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

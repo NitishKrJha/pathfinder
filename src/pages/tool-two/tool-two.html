@@ -1,0 +1,127 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+                <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+                <ion-title text-center>TOOLS</ion-title>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <ion-icon name="home" style="zoom:2.3;" color="dark" (click)="gotoDashboard();" float-right></ion-icon>
+                <!-- <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right> -->
+                <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center no-padding>
+                <h5 class="purple">DMPA Re-Injection Checklist </h5>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 no-padding>
+                <p class="secondary_color">Ask all and mark one that is applicable</p>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 text-center no-padding>
+                <p>YES</p>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 text-center no-padding>
+                <p>NO</p>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let question of questionArrayOne let i = index" [attr.data-index]="i" radio-group>
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 no-padding>
+                <p>{{question}}</p>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 text-center>
+                <p class="firstradio_{{i}} border light_grey " no-padding>
+                    <ion-radio color="gray_color" value="1" text-center (click)="getValue(1,i);"></ion-radio>
+                </p>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 text-center>
+                <p class="secondRadio_{{i}} border dark_green " no-padding>
+                    <ion-radio color="gray_color" value="0" text-center (click)="getValue(0,i);"></ion-radio>
+                </p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 no-padding>
+                <p class="secondary_color">Examine all and mark one that is applicable</p>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 text-center no-padding> </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 text-center no-padding></ion-col>
+        </ion-row>
+        <ion-row *ngFor="let question of questionArrayTwo let i = index" [attr.data-index]="i" radio-group>
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 no-padding>
+                <p>{{question}}</p>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 text-center>
+                <p class="  border light_grey " no-padding>
+                    <ion-radio color="gray_color" value="1" text-center (click)="getValue(1,i+9);"></ion-radio>
+                </p>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 text-center>
+                <p class="  border dark_green " no-padding>
+                    <ion-radio color="gray_color" value="0" text-center (click)="getValue(0,i+9);"></ion-radio>
+                </p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col></ion-col>
+            <ion-col> <button ion-button class="purple-background" (click)="submit();" [disabled]=submitFlag>Submit </button></ion-col>
+            <ion-col></ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<div id="myModal" class="modal ">
+    <div class="modal-content  secondRadio_0" *ngIf="modelType=='darkGrey'">
+        <ion-row text-center>
+            <ion-col col-12><img src="assets/imgs/icon_DMPA_no.png"></ion-col>
+            <ion-col col-12>
+                <h5 class="font-white">Don't give DMPA injection.</h5>
+            </ion-col>
+            <ion-col col-12> <button ion-button color="dark" (click)="closeModel();">OK</button> </ion-col>
+        </ion-row>
+    </div>
+
+    <div class="modal-content  light_grey" *ngIf="modelType=='lightGrey'">
+        <ion-row text-center>
+            <ion-col col-12><img src="assets/imgs/icon_DMPA_investigate.png"></ion-col>
+            <ion-col col-12>
+                <h5 class="font-dark">Investigate further and assess her for medical eligiblity before you give the Re-Injection dose of DMPA.</h5>
+            </ion-col>
+            <ion-col col-12> <button ion-button color="dark" (click)="closeModel();">OK</button> </ion-col>
+        </ion-row>
+    </div>
+
+    <div class="modal-content  dark_green_background" *ngIf="modelType=='Green'">
+        <ion-row text-center>
+            <ion-col col-12><img src="assets/imgs/icon_DMPA_yes.png"></ion-col>
+            <ion-col col-12>
+                <h5 class="font-white">Can give DMPA re-injection.</h5>
+            </ion-col>
+            <ion-col col-12> <button ion-button color="dark" (click)="closeModel();">OK</button> </ion-col>
+        </ion-row>
+    </div>
+</div>
+<ion-footer>
+    <ion-grid class="footer_Grid">
+        <ion-row>
+            <ion-col col-6>
+                <img src="assets/imgs/back.png" height="35px" ion-start (click)="gotoLibraryPage();">
+                <!-- <ion-icon ion-start class="footer-Icon" name="md-arrow-back" (click)="gotoTopicListPage();"></ion-icon> -->
+            </ion-col>
+
+            <ion-col col-6>
+                <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

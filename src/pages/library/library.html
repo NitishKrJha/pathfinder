@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+                <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+                <ion-title text-center>{{setLanguage.library}}</ion-title>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right>
+                <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div padding>
+        <ion-segment [(ngModel)]="methods">
+            <ion-segment-button value="libraryMethod" (ionSelect)="getScrollData();">
+                Library
+            </ion-segment-button>
+            <ion-segment-button value="tools">
+                Tools
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <div [ngSwitch]="methods">
+        <ion-list padding *ngSwitchCase="'libraryMethod'">
+            <div class="content_html"></div>
+
+        </ion-list>
+
+        <ion-list padding *ngSwitchCase="'tools'">
+            <ion-list>
+                <ion-item (click)="gotoToolPage();">
+                    Pregnancy Screening Check List
+                </ion-item>
+                <ion-item (click)="gotoToolTwo();">
+                    Re-injection Screening Checklist
+                </ion-item>
+            </ion-list>
+        </ion-list>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer_Grid">
+        <ion-row>
+            <ion-col col-6>
+                <img src="assets/imgs/back.png" height="35px" (click)="gotoDashboard();">
+                <!-- <ion-icon  class="footer-Icon" name="md-arrow-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-6>
+                <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

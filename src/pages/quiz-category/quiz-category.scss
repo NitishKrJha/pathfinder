@@ -1,0 +1,35 @@
+page-quiz-category {
+    .btn-disabled{
+        cursor: not-allowed;
+        pointer-events: none;
+        background-color:#d7d8da;
+     }
+     .disabled {
+        pointer-events:none; //This makes it not clickable
+        opacity:0.6;         //This grays it out to look disabled
+    }
+    .quiz-back-img {
+        height: 100%;
+        // background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url("../../assets/imgs/dashboard-back-img.jpg");
+        background-image: url("../assets/imgs/road-map.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 38%;
+        background-size: 100% 100%;
+    }
+    .quiz-icon {
+        position: relative;
+    }
+    .final-position {
+        position: absolute;
+        left: 43%;
+        top: 1%;
+    }
+    .mascat-position {
+        position: relative;
+        width: 16%;
+    }
+    // .flag-position {
+    //     width: 38%;
+    //     position: relative;
+    // }
+}

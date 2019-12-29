@@ -1,0 +1,103 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 class="padding-horizontal">
+                <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+                <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 class="vertical_align_middle">
+                <ion-title text-center>{{setLanguage.AskUs}}</ion-title>
+            </ion-col>
+            <ion-col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 class="padding-horizontal">
+                <h5>
+                  <ion-select placeholder="Language" class="langSelect" [(ngModel)]="lang" (ionChange)="changeLanguage($event)">
+                    <ion-option *ngFor="let lang of langOption" [value]="lang">{{ lang }}</ion-option>
+                  </ion-select>
+                </h5>
+                <!-- <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right> -->
+                <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding>
+    <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+        <form [formGroup]="askUs" (ngSubmit)="submitQuestion(askUs.value)" padding>
+            <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+                <ion-textarea cols="12" rows="4" class="question" formControlName="question" placeholder="{{setLanguage.question_PlaceHolder}}"></ion-textarea>
+                <span class="help-block" *ngIf="askUs.get('question').touched">
+              <span class="text-danger" *ngIf="askUs.get('question').hasError('required')" title="{{setLanguage.questionError}}"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>{{setLanguage.questionError}}</span>
+                </span>
+            </ion-col>
+            <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+                <button ion-button color="primary" float-right>{{setLanguage.submit}}</button>
+            </ion-col>
+        </form>
+    </ion-col>
+    <ion-row>
+        <ion-col>
+            <ion-badge color="danger">&nbsp;</ion-badge><span class="font-medium"> Waiting For Response</span>
+        </ion-col>
+        <ion-col>
+            <ion-badge color="green">&nbsp;</ion-badge><span class="font-medium"> Responded</span>
+        </ion-col>
+    </ion-row>
+    <ion-card no-padding text-left *ngFor="let questions of getQuestionList" [ngStyle]="{'border-left':questions.Statuss== '1' ? '5px solid #00CC00' : '5px solid red' }">
+        <ion-card-header color="primary" text-wrap no-padding padding-horizontal>
+            <span class="font-small"><b>You asked on:</b> {{questions.SubmittedDateTime}}</span><br> {{questions.Feedback}}
+        </ion-card-header>
+        <ion-card-content [ngStyle]="{'display':questions.Statuss!= '1' ? 'none' : 'block' }" no-padding padding-horizontal>
+            <ion-item-divider no-margin></ion-item-divider>
+            <span class="font-small" [ngStyle]="{'display':questions.Statuss!= '1' ? 'none' : 'block' }"><b>Responded on:</b> {{questions.ResponseDateTime}}</span> {{questions.Response}}
+        </ion-card-content>
+    </ion-card>
+
+    <!-- <ion-card padding text-left *ngFor="let questions of getQuestionList" [ngStyle]="{'border-left':questions.Statuss== '1' ? '5px solid green' : '5px solid red' }">
+        <ion-card-header color="primary" text-wrap>
+            <div style="width: 80%;" float-right text-right>
+                {{questions.Feedback}} <br>
+                <span class="font-small"><b>You asked By on:</b> {{questions.SubmittedDateTime}}</span>
+            </div>
+        </ion-card-header>
+        <ion-card-content padding-vertical [ngStyle]="{'display':questions.Statuss!= '1' ? 'none' : 'block' }">
+            <div style="width: 80%;" float-left>
+                {{questions.Response}}
+                <span class="font-small" [ngStyle]="{'display':questions.Statuss!= '1' ? 'none' : 'block' }"><b>Responded on:</b> {{questions.ResponseDateTime}}</span>
+            </div>
+        </ion-card-content>
+    </ion-card> -->
+</ion-content>
+
+<div id="myModal" class="modal">
+    <div class="modal-content background-no">
+        <ion-row text-center color="gray_color" text-left>
+            <ion-col col-12 no-padding>
+                <p class="secondary_color" no-padding><b>Feedback/query :</b> {{questionText}}</p>
+            </ion-col>
+            <ion-col col-12 no-padding>
+                <p class="grey_color" no-padding><b>Response :</b> {{ansText}}</p>
+            </ion-col>
+            <ion-col col-12 no-padding>
+                <span class="font-small"><b>Replied By Pathfinder On :</b> {{respondTime}}</span>
+            </ion-col>
+            <br><br>
+            <ion-col col-12 text-center> <button ion-button color="dark">OK</button> </ion-col>
+        </ion-row>
+    </div>
+</div>
+
+<ion-footer>
+    <ion-grid class="footer_Grid">
+        <ion-row>
+            <ion-col col-6>
+                <img src="assets/imgs/back.png" height="35px" (click)="gotoDashboard();">
+                <!-- <ion-icon  class="footer-Icon" name="md-arrow-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-6>
+                <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

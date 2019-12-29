@@ -1,0 +1,105 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+                <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+                <ion-title text-center>TOOLS</ion-title>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <ion-icon name="home" style="zoom:2.3;" color="dark" (click)="gotoDashboard();" float-right></ion-icon>
+                <!-- <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right> -->
+                <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content  >
+    <ion-grid>
+        <ion-row no-padding>
+            <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center no-padding>
+                <h5 class="purple"> Checklist For Ruling Out Pragnancy </h5>
+            </ion-col>
+           </ion-row>
+    </ion-grid>
+    <ion-slides (ionSlideDidChange)="slideChanged()">
+        <ion-slide *ngFor="let getQuestion of questions let i = index" [attr.data-index]="i" no-padding>
+            <ion-card text-left>
+                <ion-card-header color="primary" text-wrap no-padding>
+                    <ion-grid padding-horizontal padding-bottom>
+                        <ion-row no-padding>
+                            <ion-col col-1 no-padding>
+                                <span>{{i+1}}.</span>
+                            </ion-col>
+                            <ion-col col-11 no-padding>
+                                {{getQuestion}}
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-header>
+                <ion-card-content padding-horizontal padding-bottom>
+                    <hr>       
+                    <ion-row radio-group margin-top="12px"  >
+                         <ion-col></ion-col>
+                          <ion-col   text-center>
+                              <span class="border background-yes">
+                                     <ion-radio    value="1" text-center (click)="getValue(1,i);"></ion-radio>
+                              </span> 
+                                     <ion-label  class="label-margin"> Yes </ion-label>
+                          </ion-col>
+                        <ion-col text-center >
+                            <span class="border background-no">
+                                     <ion-radio    value="0" text-center (click)="getValue(0,i);"></ion-radio>
+                            </span>
+                                     <ion-label  class="label-margin"> No </ion-label>
+                        </ion-col>
+                        <ion-col></ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+           </ion-slide>
+    </ion-slides>
+
+    <div id="myModal" class="modal "> 
+        <div class="modal-content background-no" *ngIf="result=='-1'"> 
+            <ion-row text-center  color="gray_color" >
+                <ion-col col-12><img src="assets/imgs/icon_maybepregnant.png"></ion-col>
+                <ion-col col-12><h5 class="font-dark">If the client answered NO to all six questions,pragnancy can not be ruled out using the checklist.<br/>Rule out pregnancy by other means.</h5></ion-col>
+                 <ion-col col-12> <button ion-button color="dark" (click)="closeModel();">OK</button> </ion-col>
+            </ion-row>
+            
+        </div> 
+        <div class="modal-content  background-yes" *ngIf="result!='-1'"  > 
+                 <ion-row text-center  color="gray_color"  >
+                    <ion-col col-12><img src="assets/imgs/icon_notpregnant.png"></ion-col>
+                    <ion-col col-12><h5 class="font-dark"> Reasonably Sure Not Pregnant</h5></ion-col>
+                    <ion-col col-12> <button ion-button color="dark" (click)="closeModel();">OK</button> </ion-col>
+                </ion-row>
+        </div> 
+    </div>
+
+
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer_Grid">
+        <ion-row>
+            <ion-col col-3>
+                <img src="assets/imgs/back.png" height="35px" ion-start (click)="gotoLibraryPage();">
+                <!-- <ion-icon ion-start class="footer-Icon" name="md-arrow-back" (click)="gotoTopicListPage();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-3 text-center>
+                <img src="assets/imgs/prev.png" class="previous" height="35px" ion-start (click)="slidePrev();">
+            </ion-col>
+            <ion-col col-3 text-center>
+                <img src="assets/imgs/next.png" class="forward" height="35px" ion-start (click)="slideNext()">
+            </ion-col>
+            <ion-col col-3>
+                <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

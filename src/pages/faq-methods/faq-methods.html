@@ -1,0 +1,160 @@
+<ion-header>
+  <ion-navbar>
+      <ion-row>
+          <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+              <img class="left_img_header" src="assets/imgs/fb-icon-logo.png" float-left>
+              <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+          </ion-col>
+          <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+              <ion-title text-center>{{setLanguage.Faq}}</ion-title>
+          </ion-col>
+          <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+              <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right>
+              <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+          </ion-col>
+      </ion-row>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+  <!-- <ion-grid>
+      <ion-list>
+          <ion-item *ngFor="let getMethods of allMethods" (click)="gotoFAQPage(getMethods)" text-wrap>
+              <ion-avatar item-start class="circle">
+                  <img src="{{getMethods.TabletIconURL}}">
+              </ion-avatar>
+              {{getMethods.MethodName}}
+              <ion-icon name="ios-arrow-forward" item-end></ion-icon><br>
+          </ion-item>
+      </ion-list>
+  </ion-grid> -->
+
+  <!-- <ion-grid class="width-100" *ngIf="languageId=='1'">
+       
+      <ion-row class="border-bottom">
+           
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/IUCD-Icon.png" (click)="gotoFAQPage('1');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/dmpa-icon.png" (click)="gotoFAQPage('2');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/coc-icon.png" (click)="gotoFAQPage('3');">
+          </ion-col>
+
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/ecp-icon.png" (click)="gotoFAQPage('4');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/centchroman-icon.png" (click)="gotoFAQPage('5');">
+          </ion-col>
+
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/condom-icon.png" (click)="gotoFAQPage('8');">
+          </ion-col>
+      </ion-row>
+      <ion-row text-center>
+        <hr/>
+       
+    </ion-row>
+      <ion-row>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/male-stre.png" (click)="gotoFAQPage('6');">
+          </ion-col>
+
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/female-stre.png" (click)="gotoFAQPage('7');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="{{mascotImg}}" style="margin-top: -15px;">
+          </ion-col>
+      </ion-row>
+     
+  </ion-grid> -->
+
+  <!-- <ion-grid class="width-100" *ngIf="languageId=='2'">
+     
+      <ion-row class="border-bottom">
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/iucd-hindi-icon.png" (click)="gotoFAQPage('9');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src=" assets/methods/dmpa-hindi-icon.png" (click)="gotoFAQPage('10');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/coc-hindi-icon.png" (click)="gotoFAQPage('11');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/ECP-hindi-icon.png" (click)="gotoFAQPage('12');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/centchroman-hindi-icon.png" (click)="gotoFAQPage('13');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/condom-hindi-icon.png" (click)="gotoFAQPage('16');">
+          </ion-col>
+
+      </ion-row>
+      <ion-row text-center>
+        <hr/>
+        
+    </ion-row>
+      <ion-row>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/male-sterilization-hindi-icon.png " (click)="gotoFAQPage('14');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4>
+              <img src="assets/methods/female-sterilization-hindi-icon.png" (click)="gotoFAQPage('15');">
+          </ion-col>
+          <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 style="margin-top: -15px;">
+              <img src="{{mascotImg}}">
+          </ion-col>
+      </ion-row>
+
+  </ion-grid> -->
+  <ion-grid class="width-100" >
+    <ion-row text-center>
+        <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center no-padding>
+            <h4 class="purple" no-margin margin-top> SPACING</h4>
+        </ion-col>
+    </ion-row>
+    <ion-row class="border-bottom"   text-wrap>
+      
+        <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 *ngFor="let getMethods of spacingMethod" (click)="gotoFAQPage(getMethods.MethodId)">
+            <img src="{{getMethods.MobileIconURL}}" >
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+<ion-grid class="width-100"  >
+    <ion-row text-center>
+        <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center no-padding>
+            <h4 class="purple" no-margin margin-top> LIMITING</h4>
+        </ion-col>
+    </ion-row>
+    <ion-row class="border-bottom"  text-wrap>
+      
+        <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4  *ngFor="let getMethods of limitingMethod" (click)="gotoFAQPage(getMethods.MethodId)">
+            <img src="{{getMethods.MobileIconURL}}" >
+        </ion-col>
+        <ion-col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 style="margin-top: -15px;">
+            <img src="{{mascotImg}}">
+        </ion-col>
+    </ion-row>
+</ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-grid class="footer_Grid">
+      <ion-row>
+          <ion-col col-6>
+              <img src="assets/imgs/back.png" height="35px" (click)="gotoDashboard();">
+           </ion-col>
+          <ion-col col-6>
+              <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-footer>

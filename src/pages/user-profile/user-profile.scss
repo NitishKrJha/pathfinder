@@ -1,0 +1,165 @@
+page-user-profile {
+    .display_none {
+        display: none;
+    }
+    .dob_Calender_icon {
+        position: absolute;
+        z-index: 10;
+        right: 20%;
+        bottom: 38%;
+        background: $theme_primary_font_color;
+    }
+    .button-md {
+        border-radius: 12px;
+    }
+    .datetime-text {
+        margin-top: 6px;
+    }
+    span.help-block {
+        color: red;
+        display: block;
+        margin-left: 4%;
+    }
+    .text-input,
+    .dob_Calender,
+    ion-select {
+        border: 1px solid $theme_primary_color;
+        height: 40px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 10px;
+        background: $theme_primary_font_color;
+    }
+    .text-input::-moz-placeholder {
+        color: $theme_primary_color;
+    }
+    .text-input:-ms-input-placeholder {
+        color: $theme_primary_color;
+    }
+    .text-input::-webkit-input-placeholder {
+        text-indent: 0;
+        color: $theme_primary_color;
+    }
+    ion-select {
+        max-width: 90%;
+        margin-right: 5px;
+    }
+    .select-md .select-icon .select-icon-inner {
+        color: $theme_primary_color;
+    }
+    .phone {
+        margin-left: 1%;
+        margin-top: -10px;
+        width: 94%;
+    }
+    ion-input,
+    ion-select,
+    ion-textarea {
+        display: inline-block;
+        width: 95%;
+    }
+    .dob_Calender {
+        margin-top: 12px;
+        width: 92%;
+    }
+    ion-select.gender {
+        max-width: 86%;
+        margin-top: 12px;
+    }
+    ion-select.select-md {
+        margin-left: 10px;
+        padding: 10px 10px 13px 16px;
+    }
+    .select-md .select-placeholder {
+        color: $theme_primary_color;
+    }
+    .datetime-md .datetime-placeholder {
+        color: $theme_primary_color;
+        margin-top: 6px;
+    }
+    .select-md .select-icon {
+        float: right !important;
+        margin-top: -20px !important
+    }
+    @media screen and (min-width: 400px) {
+        ion-select {
+            max-width: 91%;
+        }
+        .dob_Calender {
+            width: 86%;
+        }
+        .phone {
+            width: 95%;
+        }
+    }
+    @media screen and (min-width: 500px) {
+        ion-select {
+            max-width: 92%;
+        }
+        .dob_Calender {
+            width: 92%;
+            margin-left: -5%;
+        }
+        .phone {
+            width: 94%;
+        }
+    }
+    @media screen and (max-width: 425px) {
+        ion-select {
+            max-width: 91%;
+        }
+        .dob_Calender_icon {
+            bottom: 38%;
+        }
+        .dob_Calender {
+            width: 92%;
+            margin-left: -5%;
+        }
+        ion-select.gender {
+            max-width: 80%;
+            margin-top: 12px;
+        }
+        .phone {
+            width: 93%;
+        }
+        .danger {
+            font-size: 18px;
+        }
+        .phone {
+            width: 96%;
+        }
+        .dob_Calender_icon {
+            bottom: 35%;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .phone {
+            width: 96%;
+        }
+        .dob_Calender_icon {
+            bottom: 35%;
+        }
+        ion-input,
+        ion-textarea {
+            display: inline-block;
+            width: 96%;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        .phone {
+            width: 95%;
+        }
+        .dob_Calender_icon {
+            bottom: 35%;
+        }
+        ion-select {
+            max-width: 90%;
+        }
+        ion-input,
+        ion-textarea {
+            display: inline-block;
+            width: 95%;
+        }
+    }
+}
