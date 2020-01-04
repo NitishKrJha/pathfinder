@@ -3,7 +3,7 @@ page-methods {
         border-bottom: 1px solid $theme_primary_color;
         padding-bottom: 10px;
     }
-    .toolbar-title { 
+    .toolbar-title {
         font-size: 1.6rem;
     }
     ion-item.item {
@@ -37,4 +37,70 @@ page-methods {
     .width-100 img{
         width: 100%;
     }
+}
+
+.txt-content {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+.cl1{
+  background: #4c8cba !important;
+}
+
+.cl2{
+  background: #c53e3a !important;
+}
+
+.cl3{
+  background: #cc6032 !important;
+}
+
+.cl4{
+  background: #30a8b9 !important;
+}
+
+.cl5{
+  background: #3fa492 !important;
+}
+
+.cl6{
+  background: #e57938 !important;
+}
+
+.cl7{
+  background: #82a33a !important;
+}
+
+.cl8{
+  background: #7f9ba7 !important;
+}
+
+.whiteImg{
+  background: #ffffff;
+}
+
+.card{
+  width: 100% !important;
+}
+
+.height-100{
+  width: 121px !important;
+}
+.height-100p{
+  width: 100% !important;
+}
+.img3{
+  height: 80px !important;
+  width: 100px !important;
+}
+.headerbg{
+  background: #006ca7 !important;
+}
+.txtalignstart{
+  text-align: start !important;
+  font-weight: bold !important;
+  margin-left: 2% !important;
 }
