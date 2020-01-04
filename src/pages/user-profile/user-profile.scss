@@ -1,4 +1,5 @@
 page-user-profile {
+
     .display_none {
         display: none;
     }
@@ -66,7 +67,6 @@ page-user-profile {
         width: 95%;
     }
     .dob_Calender {
-        margin-top: 12px;
         width: 92%;
     }
     ion-select.gender {
@@ -94,7 +94,7 @@ page-user-profile {
         }
         .dob_Calender {
             width: 91%;
-            margin-left: 3%;
+            margin-left: 4% !important;
         }
         .phone {
             width: 95%;
@@ -106,7 +106,7 @@ page-user-profile {
         }
         .dob_Calender {
             max-width: 91%;
-            margin-left: 3%;
+            margin-left: 4% !important;
         }
         .phone {
             width: 94%;
@@ -121,7 +121,7 @@ page-user-profile {
         }
         .dob_Calender {
             width: 92%;
-            margin-left: -5%;
+            margin-left: 4%!important;
         }
         ion-select.gender {
             max-width: 91%;
@@ -169,4 +169,8 @@ page-user-profile {
             width: 95%;
         }
     }
+}
+
+.select{
+  text-align: left !important;
 }
