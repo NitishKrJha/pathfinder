@@ -5,7 +5,7 @@
                 <img class="header-logo-img" src="assets/imgs/header-fp-logo.png">
             </ion-col> -->
             <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
-                <img class="header-logo-img" float-right src="assets/imgs/full-logo.png">
+                <img class="header-logo-img" src="assets/imgs/full-logo.png">
             </ion-col>
         </ion-row>
     </ion-navbar>
@@ -25,47 +25,53 @@
       </h5>
     </div>
     <ion-grid>
-      <ion-row>
+      <ion-row justify-content-center align-items-center class="height100">
         <ion-col col-12>
             <ion-grid>
-              <ion-row>
-                <ion-col col-4>
-                  <ion-card class="bgBlue">
-                    <ion-card-content>
-                      <ion-row>
+              <ion-row justify-content-center align-items-center class="height100">
+                <ion-col col-4 class="colheight80">
+                  <ion-card class="bgBlue height100">
+                    <ion-card-content class="height100">
+                      <ion-row justify-content-center align-items-center class="height100">
                         <ion-col col-12>
-                          <p>
-                              <img src="assets/imgs/dashboard-icons/fp-overview-icon.png" style="height: 31px !important;width: 31px !important;" />
-                          </p>
-                          <p>PF OVERVIEW</p>
+                          <div class="cdiv">
+                              <p>
+                                  <img src="assets/imgs/dashboard-icons/fp-overview-icon.png" style="height: 31px !important;width: 31px !important;" />
+                              </p>
+                              <p>PF OVERVIEW</p>
+                          </div>
                         </ion-col>
                       </ion-row>
                     </ion-card-content>
                   </ion-card>
                 </ion-col>
-                <ion-col col-4>
-                    <ion-card class="bgBlue">
-                      <ion-card-content>
-                        <ion-row>
+                <ion-col col-4 class="colheight80" (click)="startDateTime('ContraceptiveMethods');">
+                    <ion-card class="bgBlue height100">
+                      <ion-card-content class="height100">
+                        <ion-row justify-content-center align-items-center class="height100">
                           <ion-col col-12>
-                            <p>
-                                <img src="assets/imgs/dashboard-icons/contra-icons.png" style="height: 31px !important;width: 31px !important;" />
-                            </p>
-                            <p>CONTRACEPTIVE METHOD</p>
+                            <div class="cdiv">
+                                <p>
+                                    <img src="assets/imgs/dashboard-icons/contra-icons.png" style="height: 31px !important;width: 31px !important;" />
+                                </p>
+                                <p>CONTRACEPTIVE METHOD</p>
+                            </div>
                           </ion-col>
                         </ion-row>
                       </ion-card-content>
                     </ion-card>
                 </ion-col>
-                <ion-col col-4>
-                    <ion-card class="bgBlue">
-                      <ion-card-content>
-                        <ion-row>
+                <ion-col col-4 class="colheight80">
+                    <ion-card class="bgBlue height100">
+                      <ion-card-content class="height100">
+                        <ion-row justify-content-center align-items-center class="height100">
                           <ion-col col-12>
-                            <p>
-                                <img src="assets/imgs/dashboard-icons/couselling-icon.png" style="height: 31px !important;width: 31px !important;" />
-                            </p>
-                            <p>COUNSELING</p>
+                           <div class="cdiv">
+                              <p>
+                                  <img src="assets/imgs/dashboard-icons/couselling-icon.png" style="height: 31px !important;width: 31px !important;" />
+                              </p>
+                              <p>COUNSELING</p>
+                           </div>
                           </ion-col>
                         </ion-row>
                       </ion-card-content>
@@ -82,13 +88,15 @@
                           <ion-row class="height100">
                             <ion-col col-12 class="rowcolheight">
                               <ion-card class="bgBlue cardwidth">
-                                <ion-card-content>
-                                  <ion-row>
+                                <ion-card-content class="height100">
+                                  <ion-row justify-content-center align-items-center class="height100">
                                     <ion-col col-12>
-                                      <p>
-                                        <img src="assets/imgs/dashboard-icons/key massage.png" style="height: 31px !important;width: 31px !important;" />
-                                      </p>
-                                      <p>KEY MESSAGE</p>
+                                      <div class="cdiv">
+                                          <p>
+                                            <img src="assets/imgs/dashboard-icons/key massage.png" style="height: 31px !important;width: 31px !important;" />
+                                          </p>
+                                          <p>KEY MESSAGE</p>
+                                      </div>
                                     </ion-col>
                                   </ion-row>
                                 </ion-card-content>
@@ -96,13 +104,15 @@
                             </ion-col>
                             <ion-col col-12 class="rowcolheight">
                                 <ion-card class="bgBlue cardwidth">
-                                  <ion-card-content>
-                                    <ion-row>
+                                  <ion-card-content class="height100">
+                                    <ion-row justify-content-center align-items-center class="height100">
                                       <ion-col col-12>
-                                        <p>
-                                          <img src="assets/imgs/dashboard-icons/ask us.png" style="height: 31px !important;width: 31px !important;" />
-                                        </p>
-                                        <p>ASK US</p>
+                                        <div class="cdiv">
+                                            <p>
+                                              <img src="assets/imgs/dashboard-icons/ask us.png" style="height: 31px !important;width: 31px !important;" />
+                                            </p>
+                                            <p>ASK US</p>
+                                        </div>
                                       </ion-col>
                                     </ion-row>
                                   </ion-card-content>
@@ -110,13 +120,15 @@
                             </ion-col>
                             <ion-col col-12 class="rowcolheight">
                                 <ion-card class="bgBlue cardwidth">
-                                  <ion-card-content>
-                                    <ion-row>
+                                  <ion-card-content class="height100">
+                                    <ion-row justify-content-center align-items-center class="height100">
                                       <ion-col col-12>
-                                        <p>
-                                          <img src="assets/imgs/dashboard-icons/library.png" style="height: 31px !important;width: 31px !important;" />
-                                        </p>
-                                        <p>LIBRARY</p>
+                                        <div class="cdiv">
+                                            <p>
+                                              <img src="assets/imgs/dashboard-icons/library.png" style="height: 31px !important;width: 31px !important;" />
+                                            </p>
+                                            <p>LIBRARY</p>
+                                        </div>
                                       </ion-col>
                                     </ion-row>
                                   </ion-card-content>
@@ -125,7 +137,7 @@
                           </ion-row>
                         </ion-grid>
                     </ion-col>
-                    <ion-col col-6 class="colheight">
+                    <ion-col col-6 class="colheight whiteImg">
                       <ion-grid class="whiteImg" class="height100">
                           <ion-row class="height100">
                             <ion-col col-12 class="rowcolheight1">
@@ -142,13 +154,15 @@
                         <ion-row class="height100">
                           <ion-col col-12 class="rowcolheight">
                               <ion-card class="bgBlue cardwidth">
-                                <ion-card-content>
-                                  <ion-row>
+                                <ion-card-content class="height100">
+                                  <ion-row justify-content-center align-items-center class="height100">
                                     <ion-col col-12>
-                                      <p>
-                                          <img src="assets/imgs/dashboard-icons/faq.png" style="height: 31px !important;width: 31px !important;" />
-                                      </p>
-                                      <p>FAQ</p>
+                                      <div class="cdiv">
+                                          <p>
+                                              <img src="assets/imgs/dashboard-icons/faq.png" style="height: 31px !important;width: 31px !important;" />
+                                          </p>
+                                          <p>FAQ</p>
+                                      </div>
                                     </ion-col>
                                   </ion-row>
                                 </ion-card-content>
@@ -156,13 +170,15 @@
                           </ion-col>
                           <ion-col col-12 class="rowcolheight">
                               <ion-card class="bgBlue cardwidth">
-                                <ion-card-content>
-                                  <ion-row>
+                                <ion-card-content class="height100">
+                                  <ion-row justify-content-center align-items-center class="height100">
                                     <ion-col col-12>
-                                      <p>
-                                          <img src="assets/imgs/dashboard-icons/quiz.png" style="height: 31px !important;width: 31px !important;" />
-                                      </p>
-                                      <p>QUIZ</p>
+                                      <div class="cdiv">
+                                          <p>
+                                              <img src="assets/imgs/dashboard-icons/quiz.png" style="height: 31px !important;width: 31px !important;" />
+                                          </p>
+                                          <p>QUIZ</p>
+                                      </div>
                                     </ion-col>
                                   </ion-row>
                                 </ion-card-content>
@@ -170,13 +186,15 @@
                           </ion-col>
                           <ion-col col-12 class="rowcolheight">
                               <ion-card class="bgBlue cardwidth">
-                                <ion-card-content>
-                                  <ion-row>
+                                <ion-card-content class="height100">
+                                  <ion-row justify-content-center align-items-center class="height100">
                                     <ion-col col-12>
-                                      <p>
-                                          <img src="assets/imgs/dashboard-icons/yfs.png" style="height: 31px !important;width: 31px !important;" />
-                                      </p>
-                                      <p>YFS</p>
+                                      <div class="cdiv">
+                                          <p>
+                                              <img src="assets/imgs/dashboard-icons/yfs.png" style="height: 31px !important;width: 31px !important;" />
+                                          </p>
+                                          <p>YFS</p>
+                                      </div>
                                     </ion-col>
                                   </ion-row>
                                 </ion-card-content>
@@ -208,17 +226,8 @@
 <ion-footer>
     <ion-grid class="dash_footer_Grid">
         <ion-row>
-            <ion-col col-4>
-                <div> <img class="footer-img" src="assets/imgs/logo_one.jpg"></div>
-            </ion-col>
-
-            <ion-col col-4>
-                <div item-center text-center> <img class="footer-img" src="assets/imgs/logo_two.jpg"></div>
-            </ion-col>
-
-            <ion-col col-4>
-                <!-- <ion-icon class="refershIcon" name="refresh" style="zoom:2.3;" color="light" (click)="confirmUpdate();" float-left></ion-icon> -->
-                <div> <img src="assets/imgs/logo_three.jpg"></div>
+            <ion-col col-12>
+                <div> <img class="footer-img" src="assets/imgs/dashboard-icons/footer.png"></div>
             </ion-col>
 
         </ion-row>

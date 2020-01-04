@@ -83,6 +83,10 @@ ion-card img{
   margin-left: auto !important;
 }
 
+.colheight80{
+  height: 80px !important;
+}
+
 
 .colheight {
   height: 375px !important;
@@ -114,6 +118,18 @@ p{
 p img{
   width: 31px !important;
   height: 31px !important;
+}
+
+.card-content-md{
+  padding: 0 !important;
+}
+
+.card-md{
+  margin: 0 !important;
+}
+
+.card-md p{
+  font-size: 0.8rem;
 }
 
 @media screen and (max-width: 360px) , screen and (max-height: 640px) {
