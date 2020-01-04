@@ -1,3 +1,6 @@
+.bgContentColor {
+  background-color: #5a308b !important;
+}
 page-dashboard {
     .display_none {
         display: none;
@@ -55,4 +58,190 @@ page-dashboard {
     .footer-icon {
         height: 40px;
     }
+}
+
+.bgBlue{
+  background: #5c5da1 !important;
+}
+
+.whiteImg{
+  background: #ffffff;
+}
+
+.card{
+  width: 100% !important;
+}
+
+.grid{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+ion-card img{
+  width: 50% !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+
+.colheight {
+  height: 375px !important;
+}
+
+.rowcolheight {
+  height: 33.3% !important;
+  padding: 1px !important;
+}
+
+.rowcolheight1 {
+  height: 15% !important;
+}
+.rowcolheight2 {
+  height: 84% !important;
+}
+
+.height100 {
+  height: 100% !important;
+}
+
+.cardwidth {
+  height: 90% !important;
+}
+p{
+  color: #fff !important;
+}
+
+p img{
+  width: 31px !important;
+  height: 31px !important;
+}
+
+@media screen and (max-width: 360px) , screen and (max-height: 640px) {
+  .colheight {
+    height: 375px !important;
+  }
+
+  .rowcolheight {
+    height: 33.3% !important;
+    padding: 1px !important;
+  }
+
+  .rowcolheight1 {
+    height: 15% !important;
+  }
+  .rowcolheight2 {
+    height: 84% !important;
+  }
+
+  .height100 {
+    height: 100% !important;
+  }
+
+  .cardwidth {
+    height: 90% !important;
+  }
+}
+
+@media screen and (max-width: 411px) , screen and (max-height: 731px) {
+  .colheight {
+    height: 466px !important;
+  }
+
+  .rowcolheight {
+    height: 33.3% !important;
+    padding: 1px !important;
+  }
+
+  .rowcolheight1 {
+    height: 15% !important;
+  }
+  .rowcolheight2 {
+    height: 84% !important;
+  }
+
+  .height100 {
+    height: 100% !important;
+  }
+
+  .cardwidth {
+    height: 90% !important;
+  }
+}
+
+@media screen and (max-width: 411px) , screen and (max-height: 823px) {
+  .colheight {
+    height: 558px !important;
+  }
+
+  .rowcolheight {
+    height: 33.3% !important;
+    padding: 1px !important;
+  }
+
+  .rowcolheight1 {
+    height: 15% !important;
+  }
+  .rowcolheight2 {
+    height: 84% !important;
+  }
+
+  .height100 {
+    height: 100% !important;
+  }
+
+  .cardwidth {
+    height: 90% !important;
+  }
+}
+
+@media screen and (max-width: 320px) , screen and (max-height: 568px) {
+  .colheight {
+    height: 303px !important;
+  }
+
+  .rowcolheight {
+    height: 33.3% !important;
+    padding: 1px !important;
+  }
+
+  .rowcolheight1 {
+    height: 15% !important;
+  }
+  .rowcolheight2 {
+    height: 84% !important;
+  }
+
+  .height100 {
+    height: 100% !important;
+  }
+
+  .cardwidth {
+    height: 90% !important;
+  }
+}
+
+@media screen and (max-width: 375px) , screen and (max-height: 667px) {
+  .colheight {
+    height: 402px !important;
+  }
+
+  .rowcolheight {
+    height: 33.3% !important;
+    padding: 1px !important;
+  }
+
+  .rowcolheight1 {
+    height: 15% !important;
+  }
+  .rowcolheight2 {
+    height: 84% !important;
+  }
+
+  .height100 {
+    height: 100% !important;
+  }
+
+  .cardwidth {
+    height: 90% !important;
+  }
 }

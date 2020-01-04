@@ -1,10 +1,10 @@
 <ion-header>
     <ion-navbar>
         <ion-row>
-            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 no-padding>
+            <!-- <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 no-padding>
                 <img class="header-logo-img" src="assets/imgs/header-fp-logo.png">
-            </ion-col>
-            <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 no-padding>
+            </ion-col> -->
+            <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
                 <img class="header-logo-img" float-right src="assets/imgs/full-logo.png">
             </ion-col>
         </ion-row>
@@ -13,7 +13,7 @@
 
 
 
-<ion-content padding>
+<ion-content padding class="bgContentColor">
     <div class="progress"></div>
 
     <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
@@ -24,57 +24,174 @@
         </ion-select>
       </h5>
     </div>
-    <div class="dashboard-back-img">
-        <div class="dashboard-icon" text-center style="top: 12%;left: 5px;">
-            <button ion-button icon-only class="circle" color="appcolor" (click)=" startDateTime('FPOverview');">
-                <img src="assets/imgs/dashboard-icons/fp-overview-icon.png" >
-            </button> <br/><span class="font-dark">{{setLanguage.overview}}</span>
-        </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-4>
+                  <ion-card class="bgBlue">
+                    <ion-card-content>
+                      <ion-row>
+                        <ion-col col-12>
+                          <p>
+                              <img src="assets/imgs/dashboard-icons/fp-overview-icon.png" style="height: 31px !important;width: 31px !important;" />
+                          </p>
+                          <p>PF OVERVIEW</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+                <ion-col col-4>
+                    <ion-card class="bgBlue">
+                      <ion-card-content>
+                        <ion-row>
+                          <ion-col col-12>
+                            <p>
+                                <img src="assets/imgs/dashboard-icons/contra-icons.png" style="height: 31px !important;width: 31px !important;" />
+                            </p>
+                            <p>CONTRACEPTIVE METHOD</p>
+                          </ion-col>
+                        </ion-row>
+                      </ion-card-content>
+                    </ion-card>
+                </ion-col>
+                <ion-col col-4>
+                    <ion-card class="bgBlue">
+                      <ion-card-content>
+                        <ion-row>
+                          <ion-col col-12>
+                            <p>
+                                <img src="assets/imgs/dashboard-icons/couselling-icon.png" style="height: 31px !important;width: 31px !important;" />
+                            </p>
+                            <p>COUNSELING</p>
+                          </ion-col>
+                        </ion-row>
+                      </ion-card-content>
+                    </ion-card>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-col>
+        <ion-col col-12>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-3 class="colheight">
+                        <ion-grid class="height100">
+                          <ion-row class="height100">
+                            <ion-col col-12 class="rowcolheight">
+                              <ion-card class="bgBlue cardwidth">
+                                <ion-card-content>
+                                  <ion-row>
+                                    <ion-col col-12>
+                                      <p>
+                                        <img src="assets/imgs/dashboard-icons/key massage.png" style="height: 31px !important;width: 31px !important;" />
+                                      </p>
+                                      <p>KEY MESSAGE</p>
+                                    </ion-col>
+                                  </ion-row>
+                                </ion-card-content>
+                              </ion-card>
+                            </ion-col>
+                            <ion-col col-12 class="rowcolheight">
+                                <ion-card class="bgBlue cardwidth">
+                                  <ion-card-content>
+                                    <ion-row>
+                                      <ion-col col-12>
+                                        <p>
+                                          <img src="assets/imgs/dashboard-icons/ask us.png" style="height: 31px !important;width: 31px !important;" />
+                                        </p>
+                                        <p>ASK US</p>
+                                      </ion-col>
+                                    </ion-row>
+                                  </ion-card-content>
+                                </ion-card>
+                            </ion-col>
+                            <ion-col col-12 class="rowcolheight">
+                                <ion-card class="bgBlue cardwidth">
+                                  <ion-card-content>
+                                    <ion-row>
+                                      <ion-col col-12>
+                                        <p>
+                                          <img src="assets/imgs/dashboard-icons/library.png" style="height: 31px !important;width: 31px !important;" />
+                                        </p>
+                                        <p>LIBRARY</p>
+                                      </ion-col>
+                                    </ion-row>
+                                  </ion-card-content>
+                                </ion-card>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                    </ion-col>
+                    <ion-col col-6 class="colheight">
+                      <ion-grid class="whiteImg" class="height100">
+                          <ion-row class="height100">
+                            <ion-col col-12 class="rowcolheight1">
+                                  <img class="height100" src="assets/imgs/dashboard-icons/Family planning app logo.png">
+                            </ion-col>
+                            <ion-col col-12 class="rowcolheight2">
+                                  <img class="height100" src="assets/imgs/dashboard-icons/with support from.png">
+                            </ion-col>
+                          </ion-row>
+                      </ion-grid>
+                    </ion-col>
+                    <ion-col col-3 class="colheight">
+                      <ion-grid class="height100">
+                        <ion-row class="height100">
+                          <ion-col col-12 class="rowcolheight">
+                              <ion-card class="bgBlue cardwidth">
+                                <ion-card-content>
+                                  <ion-row>
+                                    <ion-col col-12>
+                                      <p>
+                                          <img src="assets/imgs/dashboard-icons/faq.png" style="height: 31px !important;width: 31px !important;" />
+                                      </p>
+                                      <p>FAQ</p>
+                                    </ion-col>
+                                  </ion-row>
+                                </ion-card-content>
+                              </ion-card>
+                          </ion-col>
+                          <ion-col col-12 class="rowcolheight">
+                              <ion-card class="bgBlue cardwidth">
+                                <ion-card-content>
+                                  <ion-row>
+                                    <ion-col col-12>
+                                      <p>
+                                          <img src="assets/imgs/dashboard-icons/quiz.png" style="height: 31px !important;width: 31px !important;" />
+                                      </p>
+                                      <p>QUIZ</p>
+                                    </ion-col>
+                                  </ion-row>
+                                </ion-card-content>
+                              </ion-card>
+                          </ion-col>
+                          <ion-col col-12 class="rowcolheight">
+                              <ion-card class="bgBlue cardwidth">
+                                <ion-card-content>
+                                  <ion-row>
+                                    <ion-col col-12>
+                                      <p>
+                                          <img src="assets/imgs/dashboard-icons/yfs.png" style="height: 31px !important;width: 31px !important;" />
+                                      </p>
+                                      <p>YFS</p>
+                                    </ion-col>
+                                  </ion-row>
+                                </ion-card-content>
+                              </ion-card>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-        <div class="dashboard-icon" text-center style="top: 34%;left: 5px;">
-            <button ion-button icon-only class="circle" color="appcolor" (click)=" startDateTime('Faq');">
-                <img src="assets/imgs/dashboard-icons/faq-icon.png" >
-            </button> <br/><span class="font-dark">{{setLanguage.Faq}}</span>
-        </div>
-        <div class="dashboard-icon" text-center style="top: 56%; left: 5px;">
-            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('KeyMessage');">
-                 <img src="assets/imgs/dashboard-icons/keymessage-icon.png" >
-            </button> <br/><span class="font-dark">{{setLanguage.keyMessage}}</span>
-        </div>
-        <div class="dashboard-icon" text-center style="top: 78%; left: 5px;">
-            <button ion-button icon-only class="circle" color="appcolor" (click)=" startDateTime('Counselling');">
-                <img src="assets/imgs/dashboard-icons/couselling-icon.png" >
-            </button> <br/><span class="font-dark">{{setLanguage.counselling}}</span>
-        </div>
-        <!-- <div class="dashboard-icon" text-center style="top: 78%; left: 35%;">
-            <button ion-button icon-only class="circle" color="appcolor" (click)="gotoQuizPage();">
-                <img src="assets/imgs/dashboard-icons/quiz-icon.png"  >
-            </button> <br/><span class="font-dark">{{setLanguage.Quiz}}</span>
-        </div> -->
-        <div class="dashboard-icon" text-center style="top: 12%;right: 5px;">
-            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('ContraceptiveMethods');">
-                <img src="assets/imgs/dashboard-icons/contra-icons.png">
-            </button> <br/><span class="font-dark">{{setLanguage.Methods}}</span>
-        </div>
-        <div class="dashboard-icon" text-center style="top: 34%;right: 5px;">
-            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('AskUs');">
-                <img src="assets/imgs/dashboard-icons/ask-icon.png">
-            </button> <br/><span class="font-dark">{{setLanguage.AskUs}}</span>
-        </div>
 
-        <div class="dashboard-icon" text-center style="top: 56%; right: 5px;">
-            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('Quiz');">
-                    <img src="assets/imgs/dashboard-icons/quiz-icon.png"  >
-                </button> <br/><span class="font-dark">{{setLanguage.Quiz}}</span>
-            <!-- <img src="assets/imgs/dashboard-icons/incentives-icon.png"  (click)="gotoIncentivesPage();">
-            </button> <br/><span class="font-dark">{{setLanguage.incentive}}</span> -->
-        </div>
-        <div class="dashboard-icon" text-center style="top: 78%;right: 5px;">
-            <button ion-button icon-only class="circle" color="appcolor" (click)="startDateTime('Library');">
-                <img src="assets/imgs/dashboard-icons/library-icon.png"  >
-            </button> <br/><span class="font-dark">{{setLanguage.library}}</span>
-        </div>
-    </div>
 
     <div id="myModal" class="modal ">
         <div class="modal-content">
