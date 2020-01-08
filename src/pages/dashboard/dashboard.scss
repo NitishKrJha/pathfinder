@@ -58,6 +58,12 @@ page-dashboard {
     .footer-icon {
         height: 40px;
     }
+    .toolbar-background-md{
+      background: #fff !important;
+    }
+    .scroll-content{
+      overflow-y: hidden !important;
+    }
 }
 
 .bgBlue{
@@ -70,6 +76,7 @@ page-dashboard {
 
 .card{
   width: 100% !important;
+  border-radius: 8% !important;
 }
 
 .grid{
@@ -84,7 +91,7 @@ ion-card img{
 }
 
 .colheight80{
-  height: 80px !important;
+  height: 108px !important;
 }
 
 
@@ -132,132 +139,91 @@ p img{
   font-size: 0.8rem;
 }
 
-@media screen and (max-width: 360px) , screen and (max-height: 640px) {
+@media screen and (min-width: 320px) , (min-height: 568px) {
   .colheight {
-    height: 375px !important;
+    height: 327px !important; //changed
   }
-
-  .rowcolheight {
-    height: 33.3% !important;
-    padding: 1px !important;
-  }
-
-  .rowcolheight1 {
-    height: 15% !important;
-  }
-  .rowcolheight2 {
-    height: 84% !important;
-  }
-
-  .height100 {
-    height: 100% !important;
-  }
-
-  .cardwidth {
-    height: 90% !important;
+  .colheight80 {
+    height: 111px !important; //changes
   }
 }
 
-@media screen and (max-width: 411px) , screen and (max-height: 731px) {
+@media screen and (min-width: 360px) , (min-height: 600px) {
+  .colheight {
+    height: 395px !important;
+  }
+
+  .colheight80 {
+    height: 106px !important;
+  }
+}
+
+@media screen and (min-width: 375px) , (min-height: 665px) {
+  .colheight {
+    height: 420px !important; //changed
+  }
+  .colheight80 {
+    height: 120px !important; //changes
+  }
+}
+
+@media screen and (min-width: 414px) , (min-height: 700px) {
+  .colheight {
+    height: 493px !important; //changed
+  }
+  .colheight80 {
+    height: 120px !important; //changed
+  }
+}
+
+
+
+
+@media screen and (min-height: 800px) {
+  .colheight {
+    height: 536px !important; //changed
+  }
+  .colheight80 {
+    height: 145px !important; //changed
+  }
+}
+
+
+@media screen and (min-width: 411px) , (min-height: 823px) {
+  .colheight {
+    height: 541px !important; //changes
+  }
+  .colheight80 {
+    height: 145px !important; //changes
+  }
+}
+
+@media screen and (min-width: 411px) ,(min-height: 731px) {
   .colheight {
     height: 466px !important;
   }
-
-  .rowcolheight {
-    height: 33.3% !important;
-    padding: 1px !important;
-  }
-
-  .rowcolheight1 {
-    height: 15% !important;
-  }
-  .rowcolheight2 {
-    height: 84% !important;
-  }
-
-  .height100 {
-    height: 100% !important;
-  }
-
-  .cardwidth {
-    height: 90% !important;
-  }
 }
 
-@media screen and (max-width: 411px) , screen and (max-height: 823px) {
+@media screen and (min-height: 1024px) {
   .colheight {
-    height: 558px !important;
+    height: 700px !important; //changed
   }
-
-  .rowcolheight {
-    height: 33.3% !important;
-    padding: 1px !important;
-  }
-
-  .rowcolheight1 {
-    height: 15% !important;
-  }
-  .rowcolheight2 {
-    height: 84% !important;
-  }
-
-  .height100 {
-    height: 100% !important;
-  }
-
-  .cardwidth {
-    height: 90% !important;
+  .colheight80 {
+    height: 195px !important; //changed
   }
 }
 
-@media screen and (max-width: 320px) , screen and (max-height: 568px) {
-  .colheight {
-    height: 303px !important;
-  }
 
-  .rowcolheight {
-    height: 33.3% !important;
-    padding: 1px !important;
-  }
 
-  .rowcolheight1 {
-    height: 15% !important;
-  }
-  .rowcolheight2 {
-    height: 84% !important;
-  }
 
-  .height100 {
-    height: 100% !important;
-  }
 
-  .cardwidth {
-    height: 90% !important;
-  }
+ion-app.md [padding] .scroll-content{
+  padding: 0 !important;
+}
+.footer-img{
+  height: 53px !important;
+  width: 100% !important;
 }
 
-@media screen and (max-width: 375px) , screen and (max-height: 667px) {
-  .colheight {
-    height: 402px !important;
-  }
 
-  .rowcolheight {
-    height: 33.3% !important;
-    padding: 1px !important;
-  }
 
-  .rowcolheight1 {
-    height: 15% !important;
-  }
-  .rowcolheight2 {
-    height: 84% !important;
-  }
-
-  .height100 {
-    height: 100% !important;
-  }
-
-  .cardwidth {
-    height: 90% !important;
-  }
-}

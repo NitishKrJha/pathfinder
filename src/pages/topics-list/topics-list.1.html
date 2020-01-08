@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <img class="left_img_header" src="assets/imgs/fb-icon-logo.png">
+                <!-- <ion-icon ion-start name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+            </ion-col>
+            <!-- <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+                <ion-title text-center>{{MethodName}}</ion-title>
+            </ion-col> -->
+            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+                <ion-title text-center>DMPA</ion-title>
+            </ion-col>
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
+                <!-- <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right> -->
+                <ion-icon name="home" style="zoom:2.3;" color="dark" (click)="gotoDashboard();" float-right></ion-icon>
+                <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <!-- <ion-grid>
+        <ion-row text-center>
+            <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center no-padding>
+                <ion-searchbar icon-end></ion-searchbar>
+            </ion-col>
+        </ion-row>
+    </ion-grid> -->
+    <!-- <ion-list>
+        <ion-item *ngFor="let getTopic of TopicList let i = index" [attr.data-index]="i" (click)="gotoTopicsContentPage(getTopic,i)" text-wrap>
+            {{getTopic.TopicName}}
+            <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+        </ion-item>
+        <ion-item *ngIf="TopicList==''">
+            {{setLanguage.noDataFound}}
+        </ion-item>
+    </ion-list> -->
+    <ion-list>
+      <ion-item  (click)="gotoTopicsContentPageTest('At a Glance',1)" text-wrap>
+          At a Glance
+          <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+      <ion-item  (click)="gotoTopicsContentPageTest('Technicle Update',2)" text-wrap>
+        Technicle Update
+        <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+      <ion-item  (click)="gotoTopicsContentPageTest('Effectiveness',3)" text-wrap>
+        Effectiveness
+        <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+      <ion-item  (click)="gotoTopicsContentPageTest('Benefits',4)" text-wrap>
+        Benefits
+        <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+      <ion-item  (click)="gotoTopicsContentPageTest('Limitations',5)" text-wrap>
+        Limitations
+        <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-grid class="footer_Grid">
+        <ion-row>
+            <ion-col col-6>
+                <img src="assets/imgs/back.png" height="35px" ion-start (click)="gotoMethodsPage();">
+                <!-- <ion-icon ion-start class="footer-Icon" name="md-arrow-back" (click)="gotoMethodsPage();"></ion-icon> -->
+            </ion-col>
+            <ion-col col-6>
+                <!-- <ion-icon name="search" style="zoom:2.2;" color="light"   (click)="openModal();"float-right></ion-icon>    -->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

@@ -5,6 +5,7 @@ page-methods {
     }
     .toolbar-title {
         font-size: 1.6rem;
+        color: #ffffff !important;
     }
     ion-item.item {
         padding-left: 0px;
@@ -37,6 +38,12 @@ page-methods {
     .width-100 img{
         width: 100%;
     }
+    .toolbar-background-md{
+      background: #0162a8 !important;
+    }
+    .card-md{
+      border-radius: 2% !important;
+    }
 }
 
 .txt-content {
@@ -44,6 +51,8 @@ page-methods {
   bottom: 0 !important;
   left: 0 !important;
   width: 100% !important;
+  font-size: 20px !important;
+  color: #fff !important;
 }
 
 .cl1{
@@ -87,20 +96,26 @@ page-methods {
 }
 
 .height-100{
-  width: 121px !important;
+  height: 149px !important;
 }
 .height-100p{
-  width: 100% !important;
+  height: 100% !important;
 }
 .img3{
-  height: 80px !important;
-  width: 100px !important;
+  height: 100% !important;
+  width: 50% !important;
+  /* margin: 24% !important; */
+  margin-top: 16%;
+  /* margin-bottom: auto; */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
-.headerbg{
-  background: #006ca7 !important;
-}
+
 .txtalignstart{
   text-align: start !important;
   font-weight: bold !important;
   margin-left: 2% !important;
 }
+
+
