@@ -3,6 +3,7 @@ import { IonicPage, Content , NavController, NavParams,Platform,LoadingControlle
 import { AppEnum } from '../../providers/app.enum';
 import { AppServices } from '../../providers/app.service';
 import { DatabaseProvider } from '../../providers/database.service';
+import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import * as $ from "jquery";
 
 @IonicPage()
@@ -18,6 +19,7 @@ export class TopicsContentPage {
   public setLanguage={Create_Your_Profile: "", Tap_to_here_to_create_your_profile: ""}
   public chooseLanguage;
   public TopicName;
+  public imgSrc;
   public topicContent;
   public topicIndex;
   public languageIcon;
@@ -26,7 +28,7 @@ export class TopicsContentPage {
   public slideIndex = 1;
   public langOption = ["English","हिंदी","मराठी"];
   constructor(public navCtrl: NavController, public navParams: NavParams,public eNumValue: AppEnum,platform: Platform,
-    private _appService: AppServices,public loadingCtrl: LoadingController,private databaseprovider: DatabaseProvider) {
+    private _appService: AppServices,public loadingCtrl: LoadingController,private databaseprovider: DatabaseProvider,private videoPlayer: VideoPlayer) {
       this.loadingPopup = this.loadingCtrl.create({
         spinner: 'hide',
         content: `
@@ -72,11 +74,14 @@ export class TopicsContentPage {
     var topicIndex= this.navParams.get('topicIndex');
     //var TopicName = selectTopicDetail;
     this.topicIndex = topicIndex;
+    this.imgSrc = '';
     if(topicIndex === 1){
       this.TopicName = 'At a Glance';
+      this.imgSrc = '';
     }
     if(topicIndex === 2){
       this.TopicName = 'Technicle Updates';
+      this.imgSrc = 'assets/imgs/4_DMPA_Technical_update.png';
     }
     if(topicIndex === 3){
       this.TopicName = 'Effectiveness';
@@ -86,6 +91,11 @@ export class TopicsContentPage {
     }
     if(topicIndex === 5){
       this.TopicName = 'Limitations';
+      this.imgSrc = 'assets/imgs/6_DMPA-Limitation.png';
+    }
+    if(topicIndex === 6){
+      this.TopicName = 'Screening';
+      this.imgSrc = 'assets/imgs/7_DMPA-Screening_Parameters.png';
     }
 
     //this.TopicName=selectTopicDetail.TopicName;
@@ -120,6 +130,15 @@ export class TopicsContentPage {
           },err => {
             this.loadingPopup.dismiss();
            });
+  }
+
+  openVid(){
+    // Playing a video.
+    this.videoPlayer.play('https://youtu.be/MYkM36CdixE').then(() => {
+      console.log('video completed');
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
 

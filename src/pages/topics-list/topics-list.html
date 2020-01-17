@@ -1,5 +1,31 @@
-<ion-content>
+<!-- <ion-content>
   <div>
     <img class="bgimg" (click)="gotoMethodsPage()" src="assets/imgs/123menu.jpg">
   </div>
+</ion-content> -->
+<ion-header class="headerbg">
+  <ion-navbar>
+    <img src="assets/imgs/p1.png" height="35px" style="width:100% !important;" (click)="gotoMethodsPage()">
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="bgcor">
+    <ion-row>
+        <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 no-padding (click)="gotoTopicsContentPageTest('At a Glance',1)">
+          <img src="assets/imgs/p2.png">
+        </ion-col>
+        <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 no-padding (click)="gotoTopicsContentPageTest('Technicle Update',2)">
+          <img src="assets/imgs/p3.png">
+        </ion-col>
+        <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12no-padding (click)="gotoTopicsContentPageTest('Limitation',5)">
+          <img src="assets/imgs/p5.png">
+        </ion-col>
+        <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding (click)="gotoTopicsContentPageTest('Screening',6)">
+          <img src="assets/imgs/p6.png">
+        </ion-col>
+        <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding>
+          <img src="assets/imgs/p7.png">
+        </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

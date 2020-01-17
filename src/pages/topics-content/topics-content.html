@@ -1,199 +1,29 @@
-<ion-header>
-    <ion-navbar>
-        <ion-row>
-            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
-                <img class="left_img_header" src="assets/imgs/fb-icon-logo.png">
-                <!-- <ion-icon ion-start name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
-            </ion-col>
-            <!-- <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
-                <ion-title text-center>{{MethodName}}</ion-title>
-            </ion-col> -->
-            <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
-                <ion-title text-center>{{TopicName}}</ion-title>
-            </ion-col>
-            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal">
-                <ion-icon name="home" style="zoom:2.3;" color="dark" (click)="gotoDashboard();" float-right></ion-icon>
-                <!-- <img class="right_img_header" src="assets/imgs/pathfinder-icon-logo.png" float-right> -->
-                <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
-            </ion-col>
-        </ion-row>
-    </ion-navbar>
-
+<ion-header class="headerbg">
+  <ion-navbar>
+      <ion-row>
+          <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal" (click)="gotoDashboard();">
+              <img class="left_img_header" src="assets/imgs/left-arrow.png" height="35px" float-left>
+              <!-- <ion-icon  name="md-arrow-round-back" (click)="gotoDashboard();"></ion-icon> -->
+          </ion-col>
+          <ion-col col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 class="vertical_align_middle">
+              <ion-title text-center>{{TopicName}}</ion-title>
+          </ion-col>
+          <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 class="padding-horizontal" (click)="gotoDashboard();">
+              <img class="right_img_header" src="assets/imgs/menu-icon.png" float-right>
+              <!-- <ion-title float-right class="font-size-14" (click)=changeLanguage(chooseLanguage)>{{chooseLanguage}}</ion-title> -->
+          </ion-col>
+      </ion-row>
+  </ion-navbar>
 </ion-header>
 <ion-content>
     <ion-grid>
-        <ion-row no-padding>
-            <!-- <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center no-padding>
-                <h5 class="purple">{{TopicName}} </h5>
-            </ion-col> -->
-            <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 class="Topic-Details" (swipe)="swipe($event)">
-              <div *ngIf="topicIndex==1">
-                  <div class="list-type1">
-                    <ol>
-                      <li><a href="javascript:void(0)">Depot Medroxyprogesterone Acetate (DMPA) is a Progestin-only injectable contraceptive</a></li>
-                      <li><a href="javascript:void(0)">Intramuscular (IM) injection of 150mg. every 3 months</a></li>
-                      <li><a href="javascript:void(0)">Safe, highly effective, convenient and can be used with full confidentiality.</a></li>
-                      <li><a href="javascript:void(0)">Menstrual disturbances are common but not harmful</a></li>
-                      <li><a href="javascript:void(0)">Can be safely used in breast feeding women after 6 weeks</a></li>
-                      <li><a href="javascript:void(0)">Return of fertility is delayed by a few months after stopping DMPA injection</a></li>
-                    </ol>
-                  </div>
-
-
-
-                <hr/>
-                <p><img alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/146679e0.jpg" style="width:100%" /></p>
-
-                <p style="text-align:justify"><em>Antara-Injectable Contraceptive DMPA (IM) in the National Family Planning Program,India</em></p>
-
-                <hr/>
-
-              </div>
-              <div *ngIf="topicIndex==2">
-                <div class="card card-2">
-                <p><span style="color:#800080"><strong>Composition:</strong></span></p>
-                <div class="list-type1">
-                  <ol>
-                    <li>
-                      <a href="javascript:void(0)">
-                          Synthetic form of progesterone resembling the natural female hormone containing an aqueous suspension of microcrystal of pregnane 17 alfa - hydroxyprogesterone
-                      </a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0)">
-                          There is a slow release of hormone into the blood stream over 3 months
-                      </a>
-                    </li>
-                  </ol>
-                </div>
-                </div>
-
-                <div class="card card-2">
-                    <p><span style="color:#800080"><strong>Mechanism of Action:</strong></span></p>
-                    <img alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/image105.png" style="width:100%" />
-                </div>
-
-                <div class="card card-2">
-                    <p><span style="color:#800080"><strong>Routes of Administration:</strong></span></p>
-
-                    <p>Depot MedroxyProgesterone Acetate is available as :</p>
-
-                    <p align="center"><img alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/DMPA-IM.jpg" style="width:100%" /></p>
-                    <div class="">
-                      <p style="text-align: center;">DMPA-IM</p>
-
-                      <p style="text-align:center">Intramuscular DMPA-IM (Antara) :Single dose vial 150mg with disposable syringe and needle(over the deltoid or gluteal region)</p>
-                    </div>
-                </div>
-
-                <div class="card card-2">
-                <p align="center"><img alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/DMPA-SC.jpg" style="width:90%" /></p>
-                  <div class="">
-                      <p style="text-align: center;">DMPA-SC</p>
-                      <p style="text-align:center">Subcutaneous DMPA-SC : Prefilled auto disable syringe in Uniject system 104 mg (squeezing bulb pushes the fluid through the needle)</p>
-                  </div>
-                </div>
-              </div>
-              <div *ngIf="topicIndex==3">
-                  <div class="list-type1">
-                      <ol>
-                        <li><a href="javascript:void(0)">DMPA is a highly effective contraceptive method.</a></li>
-                        <li><a href="javascript:void(0)">With <span style="color:#0076BC">perfect use</span> first year effectiveness is 99.7%-</a></li>
-                        <li><a href="javascript:void(0)">With <span style="color:#0076BC">typical use</span>effectiveness decreases to 97%</a></li>
-                      </ol>
-                    </div>
-
-                    <div class="card card-2">
-                        <p><span style="color:#800080"><strong>Effectiveness depends on :</strong></span></p>
-                        <div class="list-type1">
-                          <ol>
-                              <li><a href="javascript:void(0)">Timing of first injection</a></li>
-                              <li><a href="javascript:void(0)">Taking injections regularly</a></li>
-                              <li><a href="javascript:void(0)">The injection technique</a></li>
-                            <li><a href="javascript:void(0)">Post injection care</a></li>
-                          </ol>
-                          </div>
-                      </div>
-
-                      <hr/>
-                    <p><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/image44.png" style="width:100%" /></p>
-
-                    <hr/>
-              </div>
-              <div *ngIf="topicIndex==4">
-                <div class="card card-2">
-                  <p><span style="color:#800080">Contraceptive Benefits:</span></p>
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/SafeAndEffective.png" style="width:100%" /></p>
-                  <p style="text-align:center">Safe, highly effective</p>
-                </div>
-                <div class="card card-2">
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/Easy-Convenient.png" style="width:100%" /></p>
-                  <p style="text-align:center">Convenient and easy to use (does not require daily routine)</p>
-                </div>
-                <div class="card card-2">
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/3months.png" style="width:100%" /></p>
-                  <p style="text-align:center">Acts for 3 months with a grace period of 4 weeks</p>
-                </div>
-                <div class="card card-2">
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/image8.png" style="width:34%" /></p>
-                  <p style="text-align:center">Completely reversible : Pregnancy in 7-10 months from date of last injection</p>
-                </div>
-                <div class="card card-2">
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/image3.jpg" style="width:100%" /></p>
-                  <p style="text-align:center">Private and confidential</p>
-                </div>
-                <div class="card card-2">
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/image4.png" style="width:100%" /></p>
-
-                  <p style="text-align:center">Can be given to women who are not eligible to use an estrogen containing contraceptive</p>
-                </div>
-                <div class="card card-2">
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/image5.png" style="width:42%" /></p>
-
-                  <p style="text-align:center">Suitable for breast feeding women (after 6 weeks postpartum) as it does not affect quantity,quality and composition of breast milk</p>
-                </div>
-                <div class="card card-2">
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/605ee882.png" style="width:42%" /></p>
-
-                  <p style="text-align:center">Provides immediate postpartum (in non-breastfeeding women) and post-abortion contraception</p>
-                </div>
-                <div class="card card-2">
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/image6.png" style="width:100%" /></p>
-
-                  <p style="text-align:center">Does not interfere with sexual intercourse/pleasure</p>
-                </div>
-                <div class="card card-2">
-                  <p><span style="color:#800080">Non-Contraceptive Benefits:</span></p>
-
-                  <p align="center"><img class="img300" alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/dmpabenefit.png" style="width:100%" /></p>
-
-                </div>
-              </div>
-              <div *ngIf="topicIndex==5">
-                <div class="card card-2">
-                  <p><img alt="" src="http://64.94.164.16/Pathfinder-Digitaltool/assets/admin/ckeditor/plugins/imageuploader/uploads/dmpabenefit.png" style="height:260px; width:100%" /></p>
-                </div>
-              </div>
-            </ion-col>
-        </ion-row>
+      <ion-row no-padding>
+        <ion-col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding (click)="openVid();">
+          <img src="assets/imgs/dmpa-video.png">
+        </ion-col>
+        <ion-col *ngIf="imgSrc !== ''" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 no-padding (click)="openVid();">
+          <img src="{{imgSrc}}">
+        </ion-col>
+      </ion-row>
     </ion-grid>
 </ion-content>
-<ion-footer>
-    <ion-grid class="footer_Grid">
-        <ion-row>
-            <ion-col col-3>
-                <img src="assets/imgs/back.png" height="35px" ion-start (click)="gotoTopicListPage();">
-                <!-- <ion-icon ion-start class="footer-Icon" name="md-arrow-back" (click)="gotoTopicListPage();"></ion-icon> -->
-            </ion-col>
-            <!-- <ion-col col-3 text-center>
-                <img src="assets/imgs/prev.png" class="previous" height="35px" ion-start (click)="previousSlides(-1);">
-            </ion-col>
-            <ion-col col-3 text-center>
-                <img src="assets/imgs/next.png" class="forward" height="35px" ion-start (click)="plusSlides(1);">
-            </ion-col> -->
-            <ion-col col-3>
-                <!-- <div float-right (click)=changeLanguage(chooseLanguage)><img class="footer_language_icon" [src]="languageIcon"></div> -->
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-</ion-footer>

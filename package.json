@@ -32,6 +32,7 @@
     "@ionic-native/sqlite-porter": "^4.20.0",
     "@ionic-native/status-bar": "~4.17.0",
     "@ionic-native/text-to-speech": "^4.19.0",
+    "@ionic-native/video-player": "^5.19.1",
     "@ionic-native/zip": "^4.20.0",
     "@ionic/storage": "2.2.0",
     "com-sarriaroman-photoviewer": "^1.1.18",
@@ -47,6 +48,7 @@
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-tts": "^0.2.3",
+    "cordova-plugin-video-player": "git+https://github.com/moust/cordova-plugin-videoplayer.git",
     "cordova-plugin-whitelist": "^1.3.3",
     "cordova-plugin-zip": "^3.1.0",
     "cordova-sqlite-storage": "^2.6.0",
@@ -84,7 +86,8 @@
       "cordova-plugin-document-viewer": {},
       "com-sarriaroman-photoviewer": {},
       "cordova-plugin-zip": {},
-      "cordova-plugin-ionic-webview": {}
+      "cordova-plugin-ionic-webview": {},
+      "com.moust.cordova.videoplayer": {}
     },
     "platforms": [
       "browser",
