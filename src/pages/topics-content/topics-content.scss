@@ -4,6 +4,10 @@ page-topics-content {
         // font-size: $alert-ios-title-font-size;
         justify-content: space-between;
     }
+    .toolbar-title {
+      font-size: 1.6rem;
+      color: #ffffff !important;
+  }
     .active,
     .dot:hover {
         background-color: #717171;

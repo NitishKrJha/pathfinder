@@ -22,6 +22,17 @@ export class TopicsListPage {
   public subTopic;
   public langOption = ["English","हिंदी","मराठी"];
 
+  public menuList = [
+    { title: "At a Glance",img:'assets/imgs/5_DMPA-At_a_glance.png', description: "Type 1 diabetes is an autoimmune disease in which the body’s immune system attacks and destroys the beta cells in the pancreas that make insulin." },
+    { title: "Technicle Update",img:'assets/imgs/4_DMPA_Technical_update.png', description: "Multiple sclerosis (MS) is an autoimmune disease in which the body's immune system mistakenly attacks myelin, the fatty substance that surrounds and protects the nerve fibers in the central nervous system." },
+    { title: "Effectiveness",img:'', description: "Crohn's disease and ulcerative colitis (UC), both also known as inflammatory bowel diseases (IBD), are autoimmune diseases in which the body's immune system attacks the intestines." },
+    { title: "Benefits",img:'', description: "Systemic lupus erythematosus (lupus) is a chronic, systemic autoimmune disease which can damage any part of the body, including the heart, joints, skin, lungs, blood vessels, liver, kidneys and nervous system." },
+    { title: "Limitations",img:'assets/imgs/6_DMPA-Limitation.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
+    { title: "Screening Parameters",img:'assets/imgs/7_DMPA-Screening_Parameters.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." }
+  ];
+
+  shownGroup = null;
+
   constructor(public navCtrl: NavController,public modalCtrl : ModalController, public navParams: NavParams,platform: Platform,public eNumValue: AppEnum,public loadingCtrl: LoadingController,
     private _appService: AppServices,private databaseprovider: DatabaseProvider,) {
       this.loadingPopup = this.loadingCtrl.create({
@@ -79,6 +90,17 @@ export class TopicsListPage {
     modalPage.present();
   }
 
+  toggleGroup(group) {
+      if (this.isGroupShown(group)) {
+          this.shownGroup = null;
+      } else {
+          this.shownGroup = group;
+      }
+  };
+  isGroupShown(group) {
+      return this.shownGroup === group;
+  };
+
   changeLanguage(chooseLanguage){
     var result= this._appService.changeLanguage(chooseLanguage);
     if(result){
@@ -118,7 +140,7 @@ export class TopicsListPage {
   }
   gotoDashboard(){
     this.updateGetTIme();
-    this.navCtrl.setRoot("DashboardPage")
+    this.navCtrl.setRoot("MethodsPage");
   }
   onSelectChange(selectedValue: any) {
     console.log('Selected', selectedValue);

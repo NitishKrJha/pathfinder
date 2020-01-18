@@ -234,7 +234,8 @@ export class TopicsContentPage {
   }
   gotoDashboard(){
     this.updateGetTIme();
-    this.navCtrl.setRoot("DashboardPage")
+    //this.navCtrl.setRoot("DashboardPage");
+    this.navCtrl.setRoot("TopicsListPage", {methodID: 1001});
   }
 
   updateGetTIme(){
