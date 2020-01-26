@@ -72,6 +72,37 @@ page-dashboard {
     .scroll-content{
       overflow-y: hidden !important;
     }
+    .paddingtop0 {
+      padding-top: 0 !important;
+    }
+    .paddingbottom0 {
+      padding-bottom: 0 !important;
+    }
+
+    .mar1{
+      margin-left: 1% !important;
+      margin-right: 1% !important;
+    }
+    .mar2{
+      margin-left: 2% !important;
+      margin-right: 2% !important;
+    }
+    .height100 {
+      height: 99% !important;
+    }
+    .card-md p{
+      font-size: 1.2rem !important;
+    }
+
+    .pp1 {
+      padding-right: 1% !important;
+      padding-left: 1% !important;
+    }
+
+    .pp0 {
+      padding-right: 0% !important;
+      padding-left: 0% !important;
+    }
 }
 
 .bgBlue{
@@ -84,7 +115,7 @@ page-dashboard {
 
 .card{
   width: 100% !important;
-  border-radius: 8% !important;
+  border-radius: 5% !important;
 }
 
 .grid{
@@ -100,16 +131,19 @@ ion-card img{
 
 .colheight80{
   height: 108px !important;
+  padding-bottom: 0 !important;
 }
 
 
 .colheight {
   height: 375px !important;
+  padding: 0 !important;
 }
 
 .rowcolheight {
   height: 33.3% !important;
   padding: 1px !important;
+  padding-bottom: 1% !important;
 }
 
 .rowcolheight1 {
@@ -123,12 +157,10 @@ ion-card img{
   height: 84% !important;
 }
 
-.height100 {
-  height: 100% !important;
-}
+
 
 .cardwidth {
-  height: 85% !important;
+  height: 100% !important;
 }
 p{
   color: #fff !important;
@@ -147,44 +179,50 @@ p img{
   margin: 0 !important;
 }
 
-.card-md p{
-  font-size: 0.8rem;
-}
+
 
 @media screen and (min-width: 320px) , (min-height: 568px) {
   .colheight {
     height: 327px !important; //changed
+    padding: 0 !important;
   }
   .colheight80 {
     height: 111px !important; //changes
+    padding-bottom: 0 !important;
   }
 }
 
 @media screen and (min-width: 360px) , (min-height: 600px) {
   .colheight {
     height: 368px !important;
+    padding: 0 !important;
   }
 
   .colheight80 {
     height: 106px !important;
+    padding-bottom: 0 !important;
   }
 }
 
 @media screen and (min-width: 375px) , (min-height: 665px) {
   .colheight {
     height: 420px !important; //changed
+    padding: 0 !important;
   }
   .colheight80 {
     height: 120px !important; //changes
+    padding-bottom: 0 !important;
   }
 }
 
 @media screen and (min-width: 414px) , (min-height: 700px) {
   .colheight {
-    height: 433px !important; //changed
+    height: 437px !important; //changed
+    padding: 0 !important;
   }
   .colheight80 {
     height: 120px !important; //changed
+    padding-bottom: 0 !important;
   }
 }
 
@@ -197,6 +235,7 @@ p img{
   }
   .colheight80 {
     height: 145px !important; //changed
+    padding-bottom: 0 !important;
   }
 }
 
@@ -204,9 +243,11 @@ p img{
 @media screen and (min-width: 411px) , (min-height: 823px) {
   .colheight {
     height: 541px !important; //changes
+    padding: 0 !important;
   }
   .colheight80 {
     height: 145px !important; //changes
+    padding-bottom: 0 !important;
   }
 }
 
@@ -219,9 +260,11 @@ p img{
 @media screen and (min-height: 1024px) {
   .colheight {
     height: 700px !important; //changed
+    padding: 0 !important;
   }
   .colheight80 {
     height: 195px !important; //changed
+    padding-bottom: 0 !important;
   }
 }
 
