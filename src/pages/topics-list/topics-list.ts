@@ -159,4 +159,16 @@ export class TopicsListPage {
       alert("Somthing Went wrong.");
     }
   }
+
+  gotoFAQMethods(){
+    this.navCtrl.setRoot("FaqMethodsPage");
+  }
+
+  gotoAskUsPage(){
+    this.navCtrl.setRoot("AskUsPage")
+  }
+
+  goHome(){
+    this.navCtrl.setRoot("dashboard")
+  }
 }

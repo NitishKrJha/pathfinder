@@ -210,9 +210,18 @@
 <ion-footer>
   <ion-grid class="dash_footer_Grid">
       <ion-row>
-          <ion-col col-12>
-              <div> <img class="footer-img" src="assets/imgs/footer2.png"></div>
-          </ion-col>
+        <ion-col col-3>
+          <div> <img class="footer-img" src="assets/icon/home.png" (click)="goHome()"></div>
+        </ion-col>
+        <ion-col col-3>
+          <div> <img class="footer-img" src="assets/icon/Asset 1@4x-8.png"></div>
+        </ion-col>
+        <ion-col col-3>
+          <div> <img class="footer-img" src="assets/icon/faq.png" (click)="gotoFAQMethods()"></div>
+        </ion-col>
+        <ion-col col-3>
+          <div> <img class="footer-img" src="assets/icon/askus.png" (click)="gotoAskUsPage()"></div>
+        </ion-col>
 
       </ion-row>
   </ion-grid>

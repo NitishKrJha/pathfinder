@@ -206,4 +206,16 @@ export class MethodsPage {
     this.navCtrl.setRoot("TopicsListPage", {methodID: method});
   }
 
+  gotoFAQMethods(){
+    this.navCtrl.setRoot("FaqMethodsPage");
+  }
+
+  gotoAskUsPage(){
+    this.navCtrl.setRoot("AskUsPage")
+  }
+
+  goHome(){
+    this.navCtrl.setRoot("dashboard")
+  }
+
 }
