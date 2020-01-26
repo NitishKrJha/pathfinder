@@ -5,6 +5,14 @@ page-dashboard {
     .display_none {
         display: none;
     }
+    .footer-img{
+      height: 53px !important;
+      width: 100% !important;
+    }
+    .footer-img2{
+      height: 30px !important;
+      width: 100% !important;
+    }
     ion-navbar.toolbar {
         padding: 1px 1px;
     }
@@ -107,6 +115,10 @@ ion-card img{
 .rowcolheight1 {
   height: 15% !important;
 }
+
+.rowcolheight3 {
+  height: 100% !important;
+}
 .rowcolheight2 {
   height: 84% !important;
 }
@@ -116,7 +128,7 @@ ion-card img{
 }
 
 .cardwidth {
-  height: 90% !important;
+  height: 85% !important;
 }
 p{
   color: #fff !important;
@@ -220,10 +232,7 @@ p img{
 ion-app.md [padding] .scroll-content{
   padding: 0 !important;
 }
-.footer-img{
-  height: 53px !important;
-  width: 100% !important;
-}
+
 
 
 

@@ -61,6 +61,7 @@
                 <ion-select formControlName="preferdLanguage" placeholder="{{setLanguage.Preferd_Language}}" class="margin0 select" required>
                     <ion-option *ngFor="let preferdLanguageList of masterData.Languages" value={{preferdLanguageList.LanguageId}}>
                         {{preferdLanguageList.LanguageName}}</ion-option>
+                      <ion-option value="3">मराठी</ion-option>
                 </ion-select><i class="fa fa-asterisk text-danger" slot="end"></i>
                 <span class="help-block" *ngIf="userProfile.get('preferdLanguage').touched">
                   <span class="text-danger" *ngIf="userProfile.get('preferdLanguage').hasError('required')" title="Preferred Language Type is required"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Preferred Language is required</span>
@@ -95,7 +96,7 @@
                 </span>
             </ion-col>
             <ion-col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12>
-                <ion-input type="text" style="bottom: 15% !important;"  pattern="[0-9]{1}[0-9]{9}" placeholder="{{setLanguage.Mobile_No}}" formControlName="mobile"></ion-input>
+                <ion-input type="number" style="bottom: 15% !important;"  pattern="[0-9]{1}[0-9]{9}" placeholder="{{setLanguage.Mobile_No}}" formControlName="mobile"></ion-input>
                 <span class="help-block" *ngIf="userProfile.get('mobile').touched">
                   <span class="text-danger" *ngIf="userProfile.get('mobile').hasError('pattern')" title="Only Numbers are allowed"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Only Numbers are allowed</span>
                 </span>
