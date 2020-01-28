@@ -28,21 +28,21 @@
         At a Glance
         <ion-icon name="ios-arrow-forward" item-end></ion-icon>
     </ion-item> -->
+    <div *ngFor="let d of menuList; let i=index" >
+    <ion-item text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
 
-    <ion-item *ngFor="let d of menuList; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
-      <div>
         <ion-grid>
           <ion-row no-padding>
-            <ion-col col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 no-padding class="fclr" (click)="openVid();">
+            <ion-col col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 no-padding class="fclr">
                 {{d.title}}
             </ion-col>
-            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 no-padding (click)="openVid();">
+            <ion-col col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 no-padding>
                 <ion-icon [name]="isGroupShown(i) ? 'arrow-down' : 'arrow-forward'" style="float:right !important;"></ion-icon>
             </ion-col>
           </ion-row>
         </ion-grid>
 
-      </div>
+
       <div *ngIf="isGroupShown(i)">
         <div *ngIf="d.img !== ''">
           <img src="{{d.img}}">
@@ -50,6 +50,7 @@
         <div *ngIf="d.img == ''">{{d.description}}</div>
       </div>
     </ion-item>
+  </div>
   </ion-list>
 </ion-content>
 <ion-footer>

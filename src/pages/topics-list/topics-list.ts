@@ -22,21 +22,22 @@ export class TopicsListPage {
   public subTopic;
   public langOption = ["English","हिंदी","मराठी"];
 
+
   public menuList = [
-    { title: "At a Glance",img:'assets/imgs/5_DMPA-At_a_glance.png', description: "Type 1 diabetes is an autoimmune disease in which the body’s immune system attacks and destroys the beta cells in the pancreas that make insulin." },
-    { title: "Technicle Update",img:'assets/imgs/4_DMPA_Technical_update.png', description: "Multiple sclerosis (MS) is an autoimmune disease in which the body's immune system mistakenly attacks myelin, the fatty substance that surrounds and protects the nerve fibers in the central nervous system." },
-    { title: "Effectiveness",img:'assets/imgs/8_DMPA_Effectiveness.png', description: "Crohn's disease and ulcerative colitis (UC), both also known as inflammatory bowel diseases (IBD), are autoimmune diseases in which the body's immune system attacks the intestines." },
-    { title: "Benefits",img:'assets/imgs/9_DMPA_benifits.png', description: "Systemic lupus erythematosus (lupus) is a chronic, systemic autoimmune disease which can damage any part of the body, including the heart, joints, skin, lungs, blood vessels, liver, kidneys and nervous system." },
-    { title: "Limitations",img:'assets/imgs/6_DMPA-Limitation.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
-    { title: "Screening Parameters",img:'assets/imgs/7_DMPA-Screening_Parameters.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
-    { title: "Rulling Out Pregnacy",img:'assets/imgs/10_DMPA_Ruling_out_Pregnancy.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
-    { title: "Went To Start DMPA",img:'assets/imgs/11_DMPA_WhentoStart_DMPA-01.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
-    { title: "Counseling",img:'assets/imgs/12_DMPA_Counseling.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
-    { title: "Storage Of DMPA Vials",img:'assets/imgs/13_DMPA_Storage_of_DMPA_Vials.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
-    { title: "How to Administer DMPA",img:'assets/imgs/14_DMPA_How_to_Administer_DMPA-IM.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
-    { title: "Follow-up Care",img:'assets/imgs/15_Follow-up_Care.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
-    { title: "Management Of Side Effects",img:'assets/imgs/16_DMPA_Management_of_Side Effects.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." },
-    { title: "Other Issue",img:'assets/imgs/17_DMPA_Other_Issues.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." }
+    { title: "At a Glance",img:'assets/imgs/5_DMPA-At_a_glance.png', description: "Type 1 diabetes is an autoimmune disease in which the body’s immune system attacks and destroys the beta cells in the pancreas that make insulin.",show: false },
+    { title: "Technicle Update",img:'assets/imgs/4_DMPA_Technical_update.png', description: "Multiple sclerosis (MS) is an autoimmune disease in which the body's immune system mistakenly attacks myelin, the fatty substance that surrounds and protects the nerve fibers in the central nervous system.",show: false },
+    { title: "Effectiveness",img:'assets/imgs/8_DMPA_Effectiveness.png', description: "Crohn's disease and ulcerative colitis (UC), both also known as inflammatory bowel diseases (IBD), are autoimmune diseases in which the body's immune system attacks the intestines.",show: false },
+    { title: "Benefits",img:'assets/imgs/9_DMPA_benifits.png', description: "Systemic lupus erythematosus (lupus) is a chronic, systemic autoimmune disease which can damage any part of the body, including the heart, joints, skin, lungs, blood vessels, liver, kidneys and nervous system.",show: false },
+    { title: "Limitations",img:'assets/imgs/6_DMPA-Limitation.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Screening Parameters",img:'assets/imgs/7_DMPA-Screening_Parameters.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Rulling Out Pregnacy",img:'assets/imgs/10_DMPA_Ruling_out_Pregnancy.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Went To Start DMPA",img:'assets/imgs/11_DMPA_WhentoStart_DMPA-01.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Counseling",img:'assets/imgs/12_DMPA_Counseling.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Storage Of DMPA Vials",img:'assets/imgs/13_DMPA_Storage_of_DMPA_Vials.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "How to Administer DMPA",img:'assets/imgs/14_DMPA_How_to_Administer_DMPA-IM.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Follow-up Care",img:'assets/imgs/15_Follow-up_Care.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Management Of Side Effects",img:'assets/imgs/16_DMPA_Management_of_Side Effects.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Other Issue",img:'assets/imgs/17_DMPA_Other_Issues.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false }
   ];
 
   shownGroup = null;
@@ -99,14 +100,16 @@ export class TopicsListPage {
   }
 
   toggleGroup(group) {
-      if (this.isGroupShown(group)) {
-          this.shownGroup = null;
-      } else {
-          this.shownGroup = group;
-      }
+      // if (this.isGroupShown(group)) {
+      //     this.shownGroup = null;
+      // } else {
+      //     this.shownGroup = group;
+      // }
+      this.menuList[group].show = !this.menuList[group].show;
   };
   isGroupShown(group) {
-      return this.shownGroup === group;
+      //return this.shownGroup === group;
+      return this.menuList[group].show;
   };
 
   changeLanguage(chooseLanguage){
@@ -169,6 +172,6 @@ export class TopicsListPage {
   }
 
   goHome(){
-    this.navCtrl.setRoot("dashboard")
+    this.navCtrl.setRoot("DashboardPage");
   }
 }

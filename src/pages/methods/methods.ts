@@ -215,7 +215,7 @@ export class MethodsPage {
   }
 
   goHome(){
-    this.navCtrl.setRoot("dashboard")
+    this.navCtrl.setRoot("DashboardPage");
   }
 
 }
