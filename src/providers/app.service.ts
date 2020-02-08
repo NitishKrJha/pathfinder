@@ -9,8 +9,9 @@ import * as $ from "jquery";
 export class AppServices {
     private options : any;
     public headers;
-    public serviceURl= "http://64.94.164.16/Pathfinder-Digitaltool/api/"
-    //  public serviceURl= "http://64.94.164.16/Pathfinder-Digitaltool-DEV/api/"
+    // public serviceURl= "http://64.94.164.16/Pathfinder-Digitaltool/api/"
+    //public serviceURl= "http://algomtech.com/pathf/api/";
+    public serviceURl= "http://64.94.164.16/Pathfinder-Digitaltool-DEV/api/"
     constructor (private http: Http,public nav: NavController,private photoViewer: PhotoViewer) {
                 //  this.AuthToken =  localStorage.getItem('AuthToken');
                 //  // console.log(this.AuthToken);
