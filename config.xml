@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="paramarsh.PathFinder.com" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="paramarshnitish.PathFinder.com" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>The Family Planning App</name>
     <description>PathFinder awesome Ionic/Cordova app.</description>
     <author email="hamendrasingh@paramarsh.com" href="http://ionicframework.com/">Ionic Framework Team</author>

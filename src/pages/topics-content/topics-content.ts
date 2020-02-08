@@ -5,6 +5,8 @@ import { AppServices } from '../../providers/app.service';
 import { DatabaseProvider } from '../../providers/database.service';
 import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import * as $ from "jquery";
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 @IonicPage()
 @Component({
@@ -27,8 +29,19 @@ export class TopicsContentPage {
   public MethodName;
   public slideIndex = 1;
   public langOption = ["English","हिंदी","मराठी"];
-  constructor(public navCtrl: NavController, public navParams: NavParams,public eNumValue: AppEnum,platform: Platform,
-    private _appService: AppServices,public loadingCtrl: LoadingController,private databaseprovider: DatabaseProvider,private videoPlayer: VideoPlayer) {
+  public fileTransfer: FileTransferObject = this.transfer.create();
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public eNumValue: AppEnum,
+    platform: Platform,
+    private _appService: AppServices,
+    public loadingCtrl: LoadingController,
+    private databaseprovider: DatabaseProvider,
+    private transfer: FileTransfer,
+    private file: File,
+    private videoPlayer: VideoPlayer
+  ) {
       this.loadingPopup = this.loadingCtrl.create({
         spinner: 'hide',
         content: `
@@ -49,6 +62,14 @@ export class TopicsContentPage {
           var event = e;
           ths._appService.onimgclick(e);
       });
+    });
+
+    const url = 'http://algomtech.com/pathf/uploads/dmpa/11_DMPA_WhentoStart_DMPA-01.png';
+    this.fileTransfer.download(url, this.file.dataDirectory + '11_DMPA_WhentoStart_DMPA-01.png').then((entry) => {
+      console.log('download complete: ' + entry.toURL());
+      alert('download complete: ' + entry.toURL());
+    }, (error) => {
+      // handle error
     });
   }
 

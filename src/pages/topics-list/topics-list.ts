@@ -4,6 +4,8 @@ import { AppEnum } from '../../providers/app.enum';
 import { AppServices } from '../../providers/app.service';
 import { DatabaseProvider } from '../../providers/database.service';
 import { ModalController } from 'ionic-angular';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 @IonicPage()
 @Component({
@@ -21,7 +23,9 @@ export class TopicsListPage {
   public languageId;
   public subTopic;
   public langOption = ["English","हिंदी","मराठी"];
-
+  public fileTransfer: FileTransferObject = this.transfer.create();
+  public timg = '';
+  public dmpaLocal: any = [];
 
   public menuList = [
     { title: "At a Glance",img:'assets/imgs/5_DMPA-At_a_glance.png', description: "Type 1 diabetes is an autoimmune disease in which the body’s immune system attacks and destroys the beta cells in the pancreas that make insulin.",show: false },
@@ -40,10 +44,37 @@ export class TopicsListPage {
     { title: "Other Issue",img:'assets/imgs/17_DMPA_Other_Issues.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false }
   ];
 
+  public menuListServer = [
+    { title: "At a Glance",img:'5_DMPA-At_a_glance.png', description: "Type 1 diabetes is an autoimmune disease in which the body’s immune system attacks and destroys the beta cells in the pancreas that make insulin.",show: false },
+    { title: "Technicle Update",img:'4_DMPA_Technical_update.png', description: "Multiple sclerosis (MS) is an autoimmune disease in which the body's immune system mistakenly attacks myelin, the fatty substance that surrounds and protects the nerve fibers in the central nervous system.",show: false },
+    { title: "Effectiveness",img:'8_DMPA_Effectiveness.png', description: "Crohn's disease and ulcerative colitis (UC), both also known as inflammatory bowel diseases (IBD), are autoimmune diseases in which the body's immune system attacks the intestines.",show: false },
+    { title: "Benefits",img:'9_DMPA_benifits.png', description: "Systemic lupus erythematosus (lupus) is a chronic, systemic autoimmune disease which can damage any part of the body, including the heart, joints, skin, lungs, blood vessels, liver, kidneys and nervous system.",show: false },
+    { title: "Limitations",img:'6_DMPA-Limitation.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Screening Parameters",img:'7_DMPA-Screening_Parameters.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Rulling Out Pregnacy",img:'10_DMPA_Ruling_out_Pregnancy.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Went To Start DMPA",img:'11_DMPA_WhentoStart_DMPA-01.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Counseling",img:'12_DMPA_Counseling.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Storage Of DMPA Vials",img:'13_DMPA_Storage_of_DMPA_Vials.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "How to Administer DMPA",img:'14_DMPA_How_to_Administer_DMPA-IM.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Follow-up Care",img:'15_Follow-up_Care.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Management Of Side Effects",img:'16_DMPA_Management_of_Side Effects.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false },
+    { title: "Other Issue",img:'17_DMPA_Other_Issues.png', description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints.",show: false }
+  ];
+
   shownGroup = null;
 
-  constructor(public navCtrl: NavController,public modalCtrl : ModalController, public navParams: NavParams,platform: Platform,public eNumValue: AppEnum,public loadingCtrl: LoadingController,
-    private _appService: AppServices,private databaseprovider: DatabaseProvider,) {
+  constructor(
+    public navCtrl: NavController,
+    public modalCtrl : ModalController,
+    public navParams: NavParams,
+    platform: Platform,
+    public eNumValue: AppEnum,
+    public loadingCtrl: LoadingController,
+    private transfer: FileTransfer,
+    private file: File,
+    private _appService: AppServices,
+    private databaseprovider: DatabaseProvider
+  ) {
       this.loadingPopup = this.loadingCtrl.create({
         spinner: 'hide',
         content: `
@@ -55,7 +86,40 @@ export class TopicsListPage {
 
       platform.registerBackButtonAction(() => {
         this.gotoMethodsPage();
-       });
+      });
+
+      if(localStorage.getItem("dmpaContentList")){
+        this.dmpaLocal = JSON.parse(localStorage.getItem("dmpaContentList"));
+      }
+
+      if(this.dmpaLocal.length <=0 && this.menuListServer.length > 0){
+        this.loadingPopup.present();
+        let i=0;
+        this.dmpaLocal = [];
+        for(let list of this.menuListServer) {
+          //const url = 'https://algomtech.com/pathf/uploads/dmpa/11_DMPA_WhentoStart_DMPA-01.png';
+          const url = 'https://algomtech.com/pathf/uploads/dmpa/'+list.img;
+          this.fileTransfer.download(url, this.file.dataDirectory + 'dmpa/'+list.img).then((entry) => {
+            console.log('download complete: ' + entry.toURL());
+            //alert('download complete: ' + entry.toURL());
+            this.dmpaLocal[i] = {'title': list.title, 'img': entry.toURL(), 'show': list.show};
+            localStorage.setItem("dmpaContentList",JSON.stringify(this.dmpaLocal));
+            i++;
+            if(i === this.menuListServer.length){
+              this.loadingPopup.dismiss();
+            }
+            //this.timg = entry.toURL();
+            }, (error) => {
+              // handle error
+              this.loadingPopup.dismiss();
+            });
+
+        }
+
+      }
+
+
+
   }
 
   ionViewDidLoad(){

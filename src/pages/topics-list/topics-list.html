@@ -28,7 +28,7 @@
         At a Glance
         <ion-icon name="ios-arrow-forward" item-end></ion-icon>
     </ion-item> -->
-    <div *ngFor="let d of menuList; let i=index" >
+    <div *ngFor="let d of dmpaLocal; let i=index" >
     <ion-item text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
 
         <ion-grid>
